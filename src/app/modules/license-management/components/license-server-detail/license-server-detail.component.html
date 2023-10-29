@@ -1,0 +1,36 @@
+<div *ngFor="let item of licenseServerDetails.licenseServerDetails">
+  <div class="table-responsive">
+    <span>{{item.serverName}}</span> &nbsp; <a routerLink="/admin/license/edit-server/{{customerId}}/{{item.recID}}">Edit</a>
+    <table class="table table-hover table-theme table-bordered">
+      <thead>
+        <tr>
+          <th style="width:40%;">Name</th>
+          <th style="width:60%;">Value</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Server Name</td>
+          <td style="width:60%;">{{item.serverName}}</td>
+        </tr>
+        <tr>
+          <td>Description</td>
+          <td style="width:60%;">{{item.description}}</td>
+        </tr>
+        <tr>
+          <td>SQL Server Edition</td>
+          <td style="width:60%;">{{item.sqlServerEdition}}</td>
+        </tr>
+        <tr>
+          <td>Last Updated</td>
+          <td style="width:60%;">{{item.lastUpdated}}</td>
+        </tr>
+        <tr>
+          <td>Active</td>
+          <td style="width:60%;"><span class="fa fa-{{item.active ? 'check text-success': 'times text-danger'}}"></span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <hr />
+</div>

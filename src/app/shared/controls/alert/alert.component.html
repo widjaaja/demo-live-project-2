@@ -1,0 +1,8 @@
+
+<!--<p *ngFor="let alert of alerts">
+  <span class="alert alert-danger" role="alert">
+    {{alert.message}}
+  </span>
+</p>-->
+<div class="alert alert-{{alertService.alert.type}} text-center" style="margin-bottom:0px; z-index:999999" *ngIf="alertService.displayAlert == true">{{alertService.alert.message}}</div>
+

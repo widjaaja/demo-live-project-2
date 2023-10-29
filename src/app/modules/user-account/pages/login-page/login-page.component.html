@@ -1,0 +1,76 @@
+        <!-- start login section -->
+        <section style="background-color:#eee;">
+          <div class="container">
+            <div class="row justify-content-center">
+              <div class="col-md-10 col-lg-7 col-xl-6">
+
+                <div class="common-block" style="background-color:#fff;">
+
+                  <div class="line-title">
+                    <h3>Partner/ Customer Login Panel</h3>
+                  </div>
+
+                  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+
+                    <div class="row">
+
+                      <div class="col-sm-12 margin-5px-bottom">
+                        <div class="form-group">
+
+                          <input id="email" type="text" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" placeholder="UserID here" />
+                          <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                            <div *ngIf="f.email.errors.required">Email is required</div>
+                          </div>
+
+                        </div>
+                      </div>
+                      <div class="col-sm-12 margin-10px-bottom">
+
+                        <div class="form-group">
+                          <input id="password" type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" placeholder="Password here" />
+                          <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                            <div *ngIf="f.password.errors.required">password is required</div>
+                          </div>
+                        </div>
+
+                      </div>
+
+                    </div>
+                    <button class="butn theme btn-block margin-15px-top margin-15px-bottom"><span>Login</span></button>
+
+                  </form>
+                  <div class="row">
+                    <div class="col-md-12 margin-15px-bottom">
+                      By continuing, you agree to SQL Mantra Tools <a routerLink="/terms-of-use">Terms of Use</a>, <a routerLink="/privacy-policy">Privacy Policy</a> and <a routerLink="/cookie-policy">Cookie Policy</a>
+                    </div>
+
+                  </div>
+
+                  <div class="row">
+
+                    <div class="col-sm-6 text-left text-sm-right">
+                      <a routerLink="/forgot-password" class="m-link-muted">Forgot password?</a>
+                    </div>
+
+                  </div>
+                  <!--<div class="row">
+          <div class="col-sm-12">
+            <a href="forgot-password.html" class="m-link-muted">Resend Verification link</a>
+          </div>
+        </div>-->
+                  <hr />
+
+                  <div class="text-center text-small margin-20px-top">
+                    <span>Don't have an account yet? <a routerLink="/register">Create new account</a></span>
+                  </div>
+
+
+                </div>
+
+              </div>
+            </div>
+
+            
+          </div>
+        </section>
+        <!-- end under construction section -->

@@ -1,0 +1,182 @@
+        <!-- start advice form section -->
+<section>
+  <div class="container">
+    <div class="row">
+
+      <div class="col-lg-6 col-md-12 sm-margin-30px-bottom">
+
+        <div class="padding-30px-right sm-no-padding-right">
+          <div class="row">
+            <div class="col-12">
+
+              <div class="section-heading left half">
+                <h4 class="font-weight-600">Get advise</h4>
+              </div>
+
+            </div>
+
+            <div class="col-12 margin-5px-top">
+              <div class="padding-25px-bottom sm-padding-20px-bottom border-bottom border-color-medium-gray">
+                <span class="d-inline-block font-size26 sm-font-size22 xs-font-size20 line-height-30 text-theme-color vertical-align-top width-30px xs-width-25px"><i class="fas fa-phone vertical-align-top"></i></span>
+                <div class="d-inline-block vertical-align-top padding-10px-left width-75">
+                  <h5 class="margin-5px-bottom text-uppercase font-size15 xs-font-size14">Phone Number</h5>
+                  <p class="no-margin line-height-normal">+44 (0)20 3772 1081</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="padding-25px-tb sm-padding-20px-tb border-bottom border-color-medium-gray">
+                <span class="d-inline-block font-size26 sm-font-size22 xs-font-size20 line-height-30 text-theme-color vertical-align-top width-30px xs-width-25px"><i class="fas fa-map-marker-alt vertical-align-top"></i></span>
+                <div class="d-inline-block vertical-align-top padding-10px-left width-75">
+                  <h5 class="margin-5px-bottom text-uppercase font-size15 xs-font-size14">Locations</h5>
+                  <p class="no-margin line-height-normal">85 Great Portland Street, First Floor,<br /> London, W1W 7LT, United Kingdom.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="padding-25px-tb sm-padding-20px-tb">
+                <span class="d-inline-block font-size26 sm-font-size22 xs-font-size20 line-height-30 text-theme-color vertical-align-top width-30px xs-width-25px"><i class="far fa-envelope vertical-align-top"></i></span>
+                <div class="d-inline-block vertical-align-top padding-10px-left width-75">
+                  <h5 class="margin-5px-bottom text-uppercase font-size15 xs-font-size14">Email</h5>
+                  <p class="no-margin line-height-normal">sales@sqlmantratools.com</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-12">
+              <div class="margin-10px-top">
+                <ul class="social-icon-style7">
+                  <li><a href="https://www.facebook.com/sql.mantratools.3" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+                  <li><a href="https://twitter.com/ToolsSql" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                  <li><a href="https://www.linkedin.com/company/68847943" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
+                </ul>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+      <div class="col-lg-6 col-md-12">
+        <div class="contact-form-box">
+
+
+          <div class="section-heading left half">
+            <h4 class="font-weight-600">Let's talk about your business.</h4>
+          </div>
+          <!-- start form here -->
+          <form class="quform1" [formGroup]="contactsForm" (ngSubmit)="onSubmit()">
+            <div class="quform-elements">
+
+              <div class="row">
+
+                <!-- Begin Text input element -->
+                <div class="col-md-6">
+                  <div class="quform-element form-group">
+                    <div class="quform-input">
+                      <input id="name" type="text" formControlName="name" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.name.errors }" placeholder="Your name here" />
+                      <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+                        <div *ngIf="f.name.errors.required">Name is required</div>
+                      </div>
+                    </div>
+
+
+
+                  </div>
+
+                </div>
+                <!-- End Text input element -->
+                <!-- Begin Text input element -->
+                <div class="col-md-6">
+                  <div class="quform-element form-group">
+                    <div class="quform-input">
+                      <input id="email" type="text" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" placeholder="Your email here" />
+                      <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                        <div *ngIf="f.email.errors.required">Email is required</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- End Text input element -->
+                <!-- Begin Text input element -->
+                <div class="col-md-6">
+                  <div class="quform-element form-group">
+                    <div class="quform-input">
+                      <input id="subject" type="text" formControlName="subject" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.subject.errors }" placeholder="Your subject here" />
+                      <div *ngIf="submitted && f.subject.errors" class="invalid-feedback">
+                        <div *ngIf="f.subject.errors.required">Subject is required</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- End Text input element -->
+                <!-- Begin Text input element -->
+                <div class="col-md-6">
+                  <div class="quform-element form-group">
+                    <div class="quform-input">
+                      <input id="phone" type="text" formControlName="phone" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.phone.errors }" placeholder="Your Phone Number" />
+                      <div *ngIf="submitted && f.phone.errors" class="invalid-feedback">
+                        <div *ngIf="f.phone.errors.required">Phone Number is required</div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+                <!-- End Text input element -->
+                <!-- Begin Text input element -->
+                <div class="col-md-12">
+                  <div class="quform-element form-group">
+                    <div class="quform-input">
+                      <input id="company" type="text" formControlName="company" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.company.errors }" placeholder="Your company" />
+                      <div *ngIf="submitted && f.company.errors" class="invalid-feedback">
+                        <div *ngIf="f.company.errors.required">Company is required</div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+
+                <!-- Begin Textarea element -->
+                <div class="col-md-12">
+                  <div class="quform-element form-group">
+                    <div class="quform-input">
+                      <!--<textarea id="message" type="text" rows="3" formControlName="message" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.message.errors }" placeholder="Tell us a few words"></textarea>
+                      <div *ngIf="submitted && f.message.errors" class="invalid-feedback">
+                        <div *ngIf="f.message.errors.required">Message is required</div>
+                      </div>-->
+                      <ckeditor [config]="{ toolbar: [  ] , placeholder: 'Tell us a few words', enterMode: 2}" [editor]="Editor" formControlName="message" [ngClass]="{ 'is-invalid': submitted && f.message.errors }"></ckeditor>
+                      <div *ngIf="submitted && f.message.errors" class="invalid-feedback">
+                        <div *ngIf="f.message.errors.required">Message is required</div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+                <!-- End Textarea element -->
+                <!-- Begin Submit button -->
+                <div class="col-md-12">
+                  <div class="quform-submit-inner">
+                    <button class="butn"><span>Submit comment</span></button>
+                  </div>
+                  <div class="quform-loading-wrap text-left"><span class="quform-loading"></span></div>
+                </div>
+                <!-- End Submit button -->
+
+              </div>
+
+            </div>
+          </form>
+
+          <!-- end form here -->
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- end advice form section -->
+<!-- start map section -->
+<iframe class="contact-map" id="gmap_canvas" src="https://maps.google.com/maps?q=85%20Great%20Portland%20St%2C%20London%20W1W%207LT&t=&z=13&ie=UTF8&iwloc=&output=embed" scrolling="no" marginheight="0" marginwidth="0"></iframe>
+<!-- end map section -->

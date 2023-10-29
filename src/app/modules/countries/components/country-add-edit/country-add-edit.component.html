@@ -1,0 +1,62 @@
+
+
+<div class="quform-elements inner-container">
+
+  <div class="row">
+    <div class="col-md-12">
+
+      <form [formGroup]="countryAddForm" (ngSubmit)="onSubmit()">
+        <div class="row">
+          <div class="col-md-6">
+            <fieldset style="border-bottom:none;">
+              <legend><i class="fas fa-info-circle"></i>Country Details</legend>
+              <div class="form-group">
+                <label>Country Name *</label>
+                <input id="name" type="text" formControlName="name" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.name.errors }" placeholder="Country name here" />
+                <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+                  <div *ngIf="f.name.errors.required">name is required</div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Country Code *</label>
+                <input id="code" type="text" formControlName="code" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.code.errors }" placeholder="Country code here" />
+                <div *ngIf="submitted && f.code.errors" class="invalid-feedback">
+                  <div *ngIf="f.code.errors.required">country code is required</div>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+          <div class="col-md-6">
+            <fieldset style="border-bottom:none;">
+              <legend><i class="fas fa-info-circle"></i>Additional Details</legend>
+              <div class="custom-control custom-checkbox">
+                <input type="checkbox" formControlName="active" id="active" class="custom-control-input" [ngClass]="{ 'is-invalid': submitted && f.active.errors }" />
+                <label for="active" class="custom-control-label">Active</label>
+              </div>
+              <div class="custom-control custom-checkbox">
+                <input type="checkbox" formControlName="enabledForPaymentGateway1" id="enabledForPaymentGateway1" class="custom-control-input" [ngClass]="{ 'is-invalid': submitted && f.enabledForPaymentGateway1.errors }" />
+                <label for="enabledForPaymentGateway1" class="custom-control-label">Enabled for Payment Gateway 1</label>
+              </div>
+              <div class="custom-control custom-checkbox">
+                <input type="checkbox" formControlName="enabledForPaymentGateway2" id="enabledForPaymentGateway2" class="custom-control-input" [ngClass]="{ 'is-invalid': submitted && f.enabledForPaymentGateway2.errors }" />
+                <label for="enabledForPaymentGateway2" class="custom-control-label">Enabled for Payment Gateway 2</label>
+              </div>
+              <div class="custom-control custom-checkbox">
+                <input type="checkbox" formControlName="applyVat" id="applyVat" class="custom-control-input" [ngClass]="{ 'is-invalid': submitted && f.applyVat.errors }" />
+                <label for="applyVat" class="custom-control-label">Apply Vat</label>
+              </div>
+
+            </fieldset>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-9">&nbsp;</div>
+          <div class="col-md-3">
+            <button class="butn theme btn-block margin-20px-top"><span>Submit</span></button>
+
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

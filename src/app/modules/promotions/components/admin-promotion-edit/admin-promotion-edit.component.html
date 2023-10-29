@@ -1,0 +1,111 @@
+
+
+<div class="quform-elements inner-container" *ngIf="contentLoaded == true">
+
+  <div class="row">
+    <div class="col-md-12">
+
+      <form [formGroup]="promotionEditForm" (ngSubmit)="onSubmit()">
+        <div class="row">
+          <div class="col-md-12">
+            <fieldset style="border-bottom:none;">
+              <legend><i class="fas fa-info-circle"></i>Basic Details</legend>
+              <div class="form-group">
+                <label>Code</label>
+                <input id="code" type="text" formControlName="code" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.code.errors }" placeholder="Your code here" />
+                <div *ngIf="submitted && f.code.errors" class="invalid-feedback">
+                  <div *ngIf="f.code.errors.required">code is required</div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Qualification</label>
+                <select id="qualification" type="text" formControlName="qualification" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.qualification.errors }">
+                  <option disabled>Choose Qualification</option>
+
+                  <option [value]="'None'">None</option>
+                  <option [value]="'Quantity'">Quantity</option>
+                  <option [value]="'Value'">Value</option>
+                  <option [value]="'Special Price'">Special Price</option>
+                </select>
+                <div *ngIf="submitted && f.qualification.errors" class="invalid-feedback">
+                  <div *ngIf="f.qualification.errors.required">Qualification is required</div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Qualification Threshold</label>
+                <input id="qualificationThreshold" type="text" formControlName="qualificationThreshold" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.qualificationThreshold.errors }" placeholder="qualificationThreshold here" />
+                <div *ngIf="submitted && f.qualificationThreshold.errors" class="invalid-feedback">
+                  <div *ngIf="f.qualificationThreshold.errors.required">Qualification Threshold is required</div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Type</label>
+                <select id="type" type="text" formControlName="type" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.type.errors }">
+                  <option disabled>Choose Type</option>
+
+                  <option [value]="'Percentage'">Percentage</option>
+                  <option [value]="'Value'">Value</option>
+                </select>
+                <div *ngIf="submitted && f.type.errors" class="invalid-feedback">
+                  <div *ngIf="f.type.errors.required">Type is required</div>
+                </div>
+              </div>
+              <div class="form-group">
+                <div class="row">
+                  <div class="col-md-6">
+                    <label>Start Date</label>
+                    <div class="input-group">
+                      <input class="form-control" placeholder="yyyy-mm-dd" [ngClass]="{ 'is-invalid': submitted && f.startDate.errors }"
+                             name="startDate" formControlName="startDate" ngbDatepicker #d="ngbDatepicker">
+                      <div class="input-group-append">
+                        <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button"><i class="fas fa-calendar"></i></button>
+                      </div>
+                    </div>
+                    <div *ngIf="submitted && f.startDate.errors" class="invalid-feedback">
+                      <div *ngIf="f.startDate.errors.required">Start Date is required</div>
+                    </div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <label>End Date</label>
+                    <div class="input-group">
+                      <input class="form-control" placeholder="yyyy-mm-dd" [ngClass]="{ 'is-invalid': submitted && f.endDate.errors }"
+                             name="endDate" formControlName="endDate" ngbDatepicker #ed="ngbDatepicker">
+                      <div class="input-group-append">
+                        <button class="btn btn-outline-secondary calendar" (click)="ed.toggle()" type="button"><i class="fas fa-calendar"></i></button>
+                      </div>
+                      <div *ngIf="submitted && f.endDate.errors" class="invalid-feedback">
+                        <div *ngIf="f.endDate.errors.required">End Date is required</div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Value</label>
+                <input id="value" type="text" formControlName="value" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.value.errors }" placeholder="value here" />
+                <div *ngIf="submitted && f.value.errors" class="invalid-feedback">
+                  <div *ngIf="f.value.errors.required">value is required</div>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+
+        </div>
+        <div class="row">
+          <div class="col-md-9">&nbsp;</div>
+          <div class="col-md-3">
+            <button class="butn theme btn-block margin-20px-top"><span>Submit</span></button>
+
+          </div>
+        </div>
+
+
+      </form>
+
+    </div>
+
+
+  </div>
+</div>

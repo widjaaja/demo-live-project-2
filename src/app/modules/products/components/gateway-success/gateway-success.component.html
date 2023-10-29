@@ -1,0 +1,51 @@
+<div class="row justify-content-center" *ngIf="contentLoaded == true">
+  <div class="col-md-10 col-lg-9 col-xl-9">
+    <div class="common-block" style="background-color:#fff;">
+
+      <div class="line-title">
+        <h3 class="text-center">Order Confirmation</h3>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <i class="fas fa-shopping-basket fa-5x" style="color: #8A2D86;"></i>
+          <h2 style="color: #8A2D86;">Order Placed Successfully!!!</h2>
+
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <p style="margin-bottom: 20px;">Thanks for your purchase of SQL Mantra Tools. Please download the license from the dashboard.</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <p style="margin-bottom: 20px;">Please contact <a class="button link" href="mailto:sales@sqlmantratools.com">sales@sqlmantratools.com</a> if you have any queries.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row justify-content-center" *ngIf="contentLoaded == false">
+  <div class="col-md-10 col-lg-9 col-xl-9">
+    <div class="common-block" style="background-color:#fff;">
+
+      <div class="line-title">
+        <h3 class="text-center">Processing payment</h3>
+      </div>
+
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <i class="fas fa-spinner fa-spin fa-5x" style="color: #8A2D86;"></i>
+          <h2 style="color: #8A2D86;">processing Payment please wait ...</h2>
+
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 text-center">
+          <p style="margin-bottom: 20px;">Please contact <a class="button link" href="mailto:sales@sqlmantratools.com">sales@sqlmantratools.com</a> if you have any queries.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

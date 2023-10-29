@@ -1,0 +1,187 @@
+
+
+<div class="quform-elements inner-container" *ngIf="contentLoaded == true">
+
+  <div class="row">
+    <div class="col-md-12">
+
+      <form [formGroup]="customerViewForm">
+        <div class="row">
+          <div class="col-md-6">
+            <fieldset style="border-bottom:none;">
+              <legend><i class="fas fa-info-circle"></i>Basic Details</legend>
+              <div class="form-group">
+                <label>Name</label>
+                <input id="contactName" type="text" formControlName="contactName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.contactName.errors }" placeholder="name here" />
+
+              </div>
+              <div class="form-group">
+                <label>Company *</label>
+                <input id="name" type="text" formControlName="name" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.name.errors }" placeholder="Company Name here" />
+
+              </div>
+              <div class="custom-control custom-checkbox">
+                <input type="checkbox" formControlName="marketingConsent" id="marketingConsent" class="custom-control-input" />
+                <label for="marketingConsent" class="custom-control-label">Marketing Consent</label>
+              </div>
+            </fieldset>
+          </div>
+          <div class="col-md-6">
+            <fieldset>
+              <legend><i class="fas fa-info-circle"></i>Contact Details</legend>
+              <div class="form-group">
+                <label>EMail</label>
+                <input id="contactEMail" type="text" formControlName="contactEMail" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.contactEMail.errors }" placeholder="Contact Email here" />
+
+              </div>
+
+              <div class="form-group">
+                <label>Phone</label>
+                <input id="contactPhoneNo" type="text" formControlName="contactPhoneNo" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.contactPhoneNo.errors }" placeholder="Contact Phone here" />
+
+              </div>
+            </fieldset>
+          </div>
+        </div>
+        <div class="row">
+
+          <div class="col-md-12">
+            <fieldset style="border-bottom-width:1px;">
+              <legend><i class="fas fa-info-circle"></i>Address Details</legend>
+              <div class="row">
+                <div class="form-group col-md-6">
+                  <label>Address 1</label>
+                  <input id="address1" type="text" formControlName="address1" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.address1.errors }" placeholder="address1 here" />
+
+                </div>
+                <div class="form-group col-md-6">
+                  <label>Address 2</label>
+                  <input id="address2" type="text" formControlName="address2" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.address2.errors }" placeholder="address2 here" />
+                  <div *ngIf="submitted && f.address2.errors" class="invalid-feedback">
+                    <div *ngIf="f.address2.errors.required">address2 is required</div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="form-group col-md-6">
+                  <label>Address 3</label>
+                  <input id="address3" type="text" formControlName="address3" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.address3.errors }" placeholder="address3 here" />
+                  <div *ngIf="submitted && f.address3.errors" class="invalid-feedback">
+                    <div *ngIf="f.address3.errors.required">address3 is required</div>
+                  </div>
+                </div>
+                <div class="form-group col-md-6">
+                  <label>Address 4</label>
+                  <input id="address4" type="text" formControlName="address4" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.address4.errors }" placeholder="address4 here" />
+                  <div *ngIf="submitted && f.address4.errors" class="invalid-feedback">
+                    <div *ngIf="f.address4.errors.required">address4 is required</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="form-group col-md-6">
+                  <label>Postal Code</label>
+                  <input id="postCode" type="text" formControlName="postCode" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.postCode.errors }" placeholder="Post Code here" />
+                  <div *ngIf="submitted && f.postCode.errors" class="invalid-feedback">
+                    <div *ngIf="f.postCode.errors.required">Post Code is required</div>
+                  </div>
+                </div>
+                <div class="form-group col-md-6" *ngIf="hasCountries == true">
+                  <label>Country *</label>
+                  <select formControlName="country" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.country.errors }">
+                    <option disabled>Choose Country</option>
+
+                    <option *ngFor="let obj of countries" [value]="obj.name">{{obj.name}}</option>
+                  </select>
+                  <div *ngIf="f.country.touched && f.country.invalid" class="invalid-feedback">
+                    <div *ngIf="f.country.errors.required">Country is required.</div>
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+        </div>
+        <div class="row" *ngIf="adminUser == true">
+          <div class="col-md-12">
+            <fieldset style="border-bottom-width:1px;">
+              <legend><i class="fas fa-info-circle"></i>Admin Controls</legend>
+              <div class="row">
+                <div class="form-group col-md-6">
+                  <label>Type</label>
+                  <select formControlName="type" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.type.errors }">
+                    <option value="Customer">Customer</option>
+                    <option value="Partner">Partner</option>
+                  </select>
+                  <div *ngIf="f.type.touched && f.type.invalid" class="invalid-feedback">
+                    <div *ngIf="f.type.errors.required">Type is required.</div>
+                  </div>
+                </div>
+                <div class="form-group col-md-6">
+                  <label>Discount %</label>
+                  <input id="discountPercent" type="text" formControlName="discountPercent" class="form-control" placeholder="Discount Percentage here" />
+                </div>
+              </div>
+              <div class="row">
+                <div class="form-group col-md-6">
+                  <label>Renewal Discount %</label>
+                  <input id="renewalDiscountPercent" type="text" formControlName="renewalDiscountPercent" class="form-control" placeholder="Renewal Discount % here" />
+
+                </div>
+                <div class="form-group col-md-6">
+                  <label>Referral Fee %</label>
+                  <input id="referralFeePercent" type="text" formControlName="referralFeePercent" class="form-control" placeholder="Referral Fee % here" />
+
+                </div>
+              </div>
+              <div class="row">
+                <div class="form-group col-md-6">
+                  <label>URL</label>
+                  <input id="url" type="text" formControlName="url" class="form-control" placeholder="URL here" />
+                </div>
+                <div class="form-group col-md-6">
+                  <label>Partner</label>
+                  <select formControlName="partner" class="form-control">
+                    <option disabled>Choose Partner</option>
+
+                    <option *ngFor="let obj of partners.partnerLists" [value]="obj.customerID">{{obj.name}}</option>
+                  </select>
+
+                </div>
+                <div class="col-md-6">
+                  <div class="custom-control custom-checkbox">
+                    <input type="checkbox" formControlName="evaluationOnline" id="evaluationOnline" class="custom-control-input" />
+                    <label for="evaluationOnline" class="custom-control-label">Evaluation Online</label>
+                  </div>
+                  <div class="custom-control custom-checkbox">
+                    <input type="checkbox" formControlName="adminUser" id="adminUser" class="custom-control-input" />
+                    <label for="adminUser" class="custom-control-label">Admin User</label>
+                  </div>
+                  <div class="custom-control custom-checkbox">
+                    <input type="checkbox" formControlName="enabled" id="enabled" class="custom-control-input" />
+                    <label for="enabled" class="custom-control-label">Enabled</label>
+                  </div>
+                  <div class="custom-control custom-checkbox">
+                    <input type="checkbox" formControlName="onAccount" id="onAccount" class="custom-control-input" />
+                    <label for="onAccount" class="custom-control-label">On Account</label>
+                  </div>
+                </div>
+                <div class="form-group col-md-6">
+                  <label>User Id</label>
+                  <input id="userId" type="text" formControlName="userId" class="form-control" placeholder="User ID here" />
+                </div>
+              </div>
+            </fieldset>
+          </div>
+
+
+        </div>
+
+
+      </form>
+
+    </div>
+
+
+  </div>
+</div>

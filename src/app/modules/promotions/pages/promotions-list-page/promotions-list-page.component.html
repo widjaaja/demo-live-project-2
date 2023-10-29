@@ -1,0 +1,26 @@
+
+<section>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="inner-title">
+              <a routerLink="/"><i class="fas fa-home"></i></a>&nbsp;<i class="fas fa-angle-right"></i>&nbsp;<a routerLink="" (click)="headerService.userDashboard()">Dashboard</a><br />
+              <h5>
+                Promotion Codes
+              </h5>
+            </div>
+          </div>
+          <div class="col-md-6 text-right margin-30px-bottom padding-10px-bottom">
+            <button class="butn theme" type="button" (click)="AddPromotion()"><span>Add Promotion Code</span></button>
+          </div>
+        </div>
+        <app-promotions-list></app-promotions-list>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+<!-- end under construction section -->

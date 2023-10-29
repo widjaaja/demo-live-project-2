@@ -1,0 +1,40 @@
+<!-- start table section -->
+<div class="table-responsive">
+  <table class="table table-hover table-theme">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>License Period</th>
+        <th>Maintenance</th>
+        <th>Logging</th>
+        <th>Analysis</th>
+        <th>Scheduler</th>
+      </tr>
+    </thead>
+    <tbody>
+      <ng-container *ngFor="let item of products" >
+        <tr *ngIf="item.enabled==1">
+          <td>{{item.productCode}}</td>
+          <td><a routerLink="/product/{{item.productCode}}">{{item.description}}</a></td>
+          <td>
+            <ng-container *ngIf="item.unitPriceExVat != 0">
+              {{item.currency}}{{item.unitPriceExVat}}
+            </ng-container>
+
+            <ng-container *ngIf="item.unitPriceExVat == 0"><a routerLink="/contact-us">Contact Sales </a></ng-container>
+          </td>
+          <td>{{item.licensePeriod}}</td>
+
+          <td class="text-center"><span class="fa fa-{{item.maintenanceIncluded ? 'check text-success': 'times text-danger'}}"></span></td>
+          <td class="text-center"><span class="fa fa-{{item.loggingIncluded ? 'check text-success': 'times text-danger'}}"></span></td>
+          <td class="text-center"><span class="fa fa-{{item.analysisIncluded ? 'check text-success': 'times text-danger'}}"></span></td>
+          <td class="text-center"><span class="fa fa-{{item.schedulerIncluded ? 'check text-success': 'times text-danger'}}"></span></td>
+          <!--<td class="text-center"><span class="fa fa-{{item.enabled ? 'check text-success': 'times text-danger'}}"></span></td>-->
+        </tr>
+      </ng-container>
+    </tbody>
+  </table>
+</div>
+<!-- end table section -->

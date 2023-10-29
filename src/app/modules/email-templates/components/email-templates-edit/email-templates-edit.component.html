@@ -1,0 +1,93 @@
+
+
+<div class="quform-elements inner-container" *ngIf="contentLoaded == true">
+
+  <div class="row">
+    <div class="col-md-12">
+
+      <form [formGroup]="templateEditForm" (ngSubmit)="onSubmit()">
+        <div class="row">
+          <div class="col-md-6">
+            <fieldset style="border-bottom:none;">
+              <legend><i class="fas fa-info-circle"></i>Basic Details</legend>
+              <div class="form-group">
+                <label>Name</label>
+                <input id="name" type="text" formControlName="name" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.name.errors }" placeholder="Name here" />
+                <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+                  <div *ngIf="f.name.errors.required">Name is required</div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Subject *</label>
+                <input id="subject" type="text" formControlName="subject" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.subject.errors }" placeholder="Subject here" />
+                <div *ngIf="submitted && f.subject.errors" class="invalid-feedback">
+                  <div *ngIf="f.subject.errors.required">Subject is required</div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Description *</label>
+                <input id="description" type="text" formControlName="description" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.description.errors }" placeholder="Description here" />
+                <div *ngIf="submitted && f.description.errors" class="invalid-feedback">
+                  <div *ngIf="f.description.errors.required">Description is required</div>
+                </div>
+              </div>
+
+            </fieldset>
+          </div>
+          <div class="col-md-6">
+            <fieldset>
+              <legend><i class="fas fa-info-circle"></i>Contact Details</legend>
+              <div class="form-group">
+                <label>From Name *</label>
+                <input id="fromName" type="text" formControlName="fromName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.fromName.errors }" placeholder="From Name here" />
+                <div *ngIf="submitted && f.fromName.errors" class="invalid-feedback">
+                  <div *ngIf="f.fromName.errors.required">From name is required</div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label>From Address</label>
+                <input id="fromAddress" type="text" formControlName="fromAddress" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.fromAddress.errors }" placeholder="fromAddress here" />
+                <div *ngIf="submitted && f.fromAddress.errors" class="invalid-feedback">
+                  <div *ngIf="f.fromAddress.errors.required">From Address is required</div>
+                </div>
+              </div>
+              <div class="custom-control custom-checkbox">
+                <input type="checkbox" formControlName="enabled" id="enabled" class="custom-control-input" [ngClass]="{ 'is-invalid': submitted && f.enabled.errors }" />
+                <label for="enabled" class="custom-control-label">Enabled</label>
+              </div>
+            </fieldset>
+          </div>
+        </div>
+        <div class="row">
+
+          <div class="col-md-12">
+            <fieldset style="border-bottom-width:1px;">
+              <legend><i class="fas fa-info-circle"></i>Content</legend>
+              <div class="row">
+                <div class="form-group col-md-12">
+                  <label>Content</label>
+                  <quill-editor [styles]="{height: '200px'}" formControlName="content"></quill-editor>
+                  <div *ngIf="submitted && f.content.errors" class="invalid-feedback">
+                    <div *ngIf="f.content.errors.required">content is required</div>
+                  </div>
+                </div>
+              </div>
+
+            </fieldset>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-9">&nbsp;</div>
+          <div class="col-md-3">
+            <button class="butn theme btn-block margin-20px-top"><span>Submit</span></button>
+
+          </div>
+        </div>
+      </form>
+
+    </div>
+
+
+  </div>
+</div>

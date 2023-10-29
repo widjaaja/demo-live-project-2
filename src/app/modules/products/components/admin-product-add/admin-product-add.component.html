@@ -1,0 +1,164 @@
+
+
+<div class="quform-elements inner-container">
+
+  <div class="row">
+    <div class="col-md-12">
+
+      <form [formGroup]="productAddForm" (ngSubmit)="onSubmit()">
+        <div class="row">
+          <div class="col-md-6">
+            <fieldset style="border-bottom:none;">
+              <legend><i class="fas fa-info-circle"></i>Basic Details</legend>
+              <div class="form-group">
+                <label>Description</label>
+                <input id="description" type="text" formControlName="description" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.description.errors }" placeholder="Description here" />
+                <input type="hidden" formControlName="userID" />
+                <div *ngIf="submitted && f.description.errors" class="invalid-feedback">
+                  <div *ngIf="f.description.errors.required">Description is required</div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Product Code</label>
+                <input id="productCode" type="text" formControlName="productCode" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.productCode.errors }" placeholder="Product Code here" />
+                <div *ngIf="submitted && f.productCode.errors" class="invalid-feedback">
+                  <div *ngIf="f.productCode.errors.required">Product Code is required</div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label>License Period</label>
+                <select formControlName="licensePeriod" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.licensePeriod.errors }">
+                  <option disabled>Choose License Period</option>
+
+                  <option [value]="'Annual'">Annual</option>
+                  <option [value]="'Quarterly'">Quarterly</option>
+                  <option [value]="'Monthly'">Monthly</option>
+                </select>
+                <div *ngIf="f.licensePeriod.touched && f.licensePeriod.invalid" class="invalid-feedback">
+                  <div *ngIf="f.licensePeriod.errors.required">License Period is required.</div>
+                </div>
+              </div>
+
+
+              <div class="form-group">
+                <label>Short Description</label>
+                <input id="shortDescription" type="text" formControlName="shortDescription" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.shortDescription.errors }" placeholder="Short Description here" />
+                <div *ngIf="submitted && f.shortDescription.errors" class="invalid-feedback">
+                  <div *ngIf="f.shortDescription.errors.required">shortDescription is required</div>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+          <div class="col-md-6">
+            <fieldset>
+              <legend><i class="fas fa-info-circle"></i>Pricing Details</legend>
+              <div class="form-group">
+                <label>Currency</label>
+                <input id="currency" type="text" formControlName="currency" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.currency.errors }" placeholder="Currency here" />
+                <div *ngIf="submitted && f.currency.errors" class="invalid-feedback">
+                  <div *ngIf="f.currency.errors.required">currency is required</div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label>List Price</label>
+                <input id="listPrice" type="text" formControlName="listPrice" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.listPrice.errors }" placeholder="List Price here" />
+                <div *ngIf="submitted && f.listPrice.errors" class="invalid-feedback">
+                  <div *ngIf="f.listPrice.errors.required">listPrice is required</div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Unit Price Ex VAT</label>
+                <input id="unitPriceExVAT" type="text" formControlName="unitPriceExVAT" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.unitPriceExVAT.errors }" placeholder="UnitPriceExVAT here" />
+                <div *ngIf="submitted && f.unitPriceExVAT.errors" class="invalid-feedback">
+                  <div *ngIf="f.unitPriceExVAT.errors.required">unitPriceExVAT is required</div>
+                </div>
+              </div>
+              
+            </fieldset>
+          </div>
+          
+        </div>
+        <div class="row">
+
+
+          <div class="col-md-6">
+            <fieldset style="border-bottom-width:1px;">
+              <legend><i class="fas fa-info-circle"></i>Other Details</legend>
+              <div class="form-group">
+                <label>License Type</label>
+                <select formControlName="licenseType" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.licenseType.errors }">
+                  <option disabled>Choose License Type</option>
+
+                  <option [value]="'Server'">Server</option>
+                  <option [value]="'Site'">Site</option>
+                </select>
+                <div *ngIf="f.licenseType.touched && f.licenseType.invalid" class="invalid-feedback">
+                  <div *ngIf="f.licenseType.errors.required">licenseType is required.</div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label>Server Edition</label>
+                <input id="serverEdition" type="text" formControlName="serverEdition" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.serverEdition.errors }" placeholder="Server Edition here" />
+                <div *ngIf="submitted && f.serverEdition.errors" class="invalid-feedback">
+                  <div *ngIf="f.serverEdition.errors.required">Server Edition is required</div>
+                </div>
+              </div>
+
+            </fieldset>
+
+          </div>
+          <div class="col-md-6">
+            <fieldset style="border-bottom-width:1px;">
+              <legend><i class="fas fa-info-circle"></i>Modules Included</legend>
+              <div class="custom-control custom-checkbox">
+                <input type="checkbox" formControlName="maintenanceIncluded" id="maintenanceIncluded" class="custom-control-input" [ngClass]="{ 'is-invalid': submitted && f.maintenanceIncluded.errors }" />
+                <label for="maintenanceIncluded" class="custom-control-label">Database Maintenance</label>
+              </div>
+              <div class="custom-control custom-checkbox">
+                <input type="checkbox" formControlName="analysisIncluded" id="analysisIncluded" class="custom-control-input" [ngClass]="{ 'is-invalid': submitted && f.analysisIncluded.errors }" />
+                <label for="analysisIncluded" class="custom-control-label">Analysis</label>
+              </div>
+              <div class="custom-control custom-checkbox">
+                <input type="checkbox" formControlName="loggingIncluded" id="loggingIncluded" class="custom-control-input" [ngClass]="{ 'is-invalid': submitted && f.loggingIncluded.errors }" />
+                <label for="loggingIncluded" class="custom-control-label">Performance Logging</label>
+              </div>
+              <div class="custom-control custom-checkbox">
+                <input type="checkbox" formControlName="schedulerIncluded" id="schedulerIncluded" class="custom-control-input" [ngClass]="{ 'is-invalid': submitted && f.schedulerIncluded.errors }" />
+                <label for="schedulerIncluded" class="custom-control-label">Schedular</label>
+              </div>
+              <div class="custom-control custom-checkbox">
+                <input type="checkbox" formControlName="featureProduct" id="featureProduct" class="custom-control-input" [ngClass]="{ 'is-invalid': submitted && f.featureProduct.errors }" />
+                <label for="featureProduct" class="custom-control-label">Featured Product</label>
+              </div>
+              <div class="custom-control custom-checkbox">
+                <input type="checkbox" formControlName="evaluationOnline" id="evaluationOnline" class="custom-control-input" [ngClass]="{ 'is-invalid': submitted && f.evaluationOnline.errors }" />
+                <label for="evaluationOnline" class="custom-control-label">Evaluation Online</label>
+              </div>
+              <div class="custom-control custom-checkbox">
+                <input type="checkbox" formControlName="payOnline" id="payOnline" class="custom-control-input" [ngClass]="{ 'is-invalid': submitted && f.payOnline.errors }" />
+                <label for="payOnline" class="custom-control-label">Pay Online</label>
+              </div>
+              <div class="custom-control custom-checkbox">
+                <input type="checkbox" formControlName="enabled" id="enabled" class="custom-control-input" [ngClass]="{ 'is-invalid': submitted && f.enabled.errors }" />
+                <label for="enabled" class="custom-control-label">Enabled</label>
+              </div>
+            </fieldset>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-9">&nbsp;</div>
+          <div class="col-md-3">
+            <button class="butn theme btn-block margin-20px-top"><span>Submit</span></button>
+
+          </div>
+        </div>
+
+
+      </form>
+
+    </div>
+
+
+  </div>
+</div>

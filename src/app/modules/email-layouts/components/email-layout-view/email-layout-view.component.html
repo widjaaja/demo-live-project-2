@@ -1,0 +1,56 @@
+
+
+<div class="quform-elements inner-container" *ngIf="contentLoaded == true">
+
+  <div class="row">
+    <div class="col-md-12">
+
+      <form [formGroup]="layoutViewForm">
+        <div class="row">
+          <div class="col-md-12">
+            <fieldset style="border-bottom:none;">
+              <legend><i class="fas fa-info-circle"></i>Basic Details</legend>
+              <div class="form-group">
+                <label>Name</label>
+                <input id="name" type="text" formControlName="name" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.name.errors }" placeholder="Name here" />
+                <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+                  <div *ngIf="f.name.errors.required">Name is required</div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Description *</label>
+                <input id="description" type="text" formControlName="description" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.description.errors }" placeholder="Description here" />
+                <div *ngIf="submitted && f.description.errors" class="invalid-feedback">
+                  <div *ngIf="f.description.errors.required">Description is required</div>
+                </div>
+              </div>
+              
+            </fieldset>
+          </div>
+        </div>
+        <div class="row">
+
+          <div class="col-md-12">
+            <fieldset style="border-bottom-width:1px;">
+              <legend><i class="fas fa-info-circle"></i>Content</legend>
+              <div class="row">
+                <div class="form-group col-md-12">
+                  <label>Content</label>
+                  <quill-editor [styles]="{height: '300px'}" formControlName="content"></quill-editor>
+                  <div *ngIf="submitted && f.content.errors" class="invalid-feedback">
+                    <div *ngIf="f.content.errors.required">content is required</div>
+                  </div>
+                </div>
+              </div>
+
+            </fieldset>
+          </div>
+        </div>
+
+      </form>
+
+    </div>
+
+
+  </div>
+</div>

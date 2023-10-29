@@ -1,0 +1,21 @@
+<!-- start table section -->
+<div class="table-responsive" *ngIf="contentLoaded == true">
+  <table class="table table-hover table-theme">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let emailLayout of emailLayouts">
+        <td>{{emailLayout.name}}</td>
+        <td>{{emailLayout.description}}</td>
+        <td><a routerLink="/admin/email-layouts/edit/{{emailLayout.id}}"><i class="fas fa-edit"></i></a>&nbsp;<a routerLink="/admin/email-layouts/view/{{emailLayout.id}}"><i class="fas fa-eye"></i></a></td>
+      </tr>
+
+    </tbody>
+  </table>
+</div>
+<!-- end table section -->

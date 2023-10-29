@@ -1,0 +1,97 @@
+
+                <form class="quform" action="quform/getin-touch-one.php" method="post" enctype="multipart/form-data" onclick="">
+
+                    <div class="quform-elements inner-container">
+                        
+                        <div class="row">
+
+                            <!-- Begin Text input element -->
+                            <div class="col-md-12">
+                                <!-- <div class="quform-element form-group">
+                                    <div class="quform-input">
+                                        <input id="name" type="text" name="name" placeholder="Your name here" />
+                                    </div>
+                                </div> -->
+                                <fieldset style="border-bottom:none;">
+                                    <legend><i class="fas fa-info-circle"></i>Basic Details</legend>
+                                    <div class="row form-group">
+                                        <label for="EmailSettingEmailLayoutId" class="col-sm-3 control-label">Layout</label>
+                                        <div class="col-sm-9">
+                                            <select name="data[EmailSetting][email_layout_id]" class="form-control select2 select2-hidden-accessible" autocomplete="off" id="EmailSettingEmailLayoutId" required="required" tabindex="-1" aria-hidden="true">
+                                                <option value="">SELECT A LAYOUT</option>
+                                                <option value="55bf5f08-d818-4926-9b8e-17c811bb3aa6" selected="selected">Layout-1</option>
+                                            </select>					
+                                        </div>
+                                    </div>
+
+                                    <div class="quform-element row form-group">
+                                        <label for="FromAddress" class="col-sm-3 control-label">From Address</label>
+                                        <div class="quform-input col-sm-9">
+                                            <input id="name" type="text" name="name" placeholder="From Address"/>
+                                        </div>
+                                    </div>
+
+                                    <div class="row form-group">
+                                        <label for="EmailSettingFromName" class="col-sm-3 control-label">From Name</label>
+                                        <div class="col-sm-9">
+                                            <input name="data[EmailSetting][from_name]" class="form-control" autocomplete="off" maxlength="255" type="text" value="Refpa.Support@Refpa.com" id="EmailSettingFromName">					</div>
+                                    </div>
+                                    <div class="row form-group">
+                                        <label for="EmailSettingSubject" class="col-sm-3 control-label">E-Mail Subject</label>
+                                        <div class="col-sm-9">
+                                            <input name="data[EmailSetting][subject]" class="form-control" autocomplete="off" maxlength="255" type="text" value="{REQUEST_ID}" id="EmailSettingSubject">					</div>
+                                    </div>
+                                    <div class="row form-group">
+                                        <label for="EmailSettingSendToAdmin" class="col-sm-3 control-label">Send to Admin Email</label>
+                                        <div class="col-sm-9">
+                                            <input name="data[EmailSetting][send_to_admin]" class="form-control" autocomplete="off" maxlength="255" type="text" value="" id="EmailSettingSendToAdmin">                        
+                                                                     <div class="checkbox-inline">
+                                                <label>
+                                                    <input type="hidden" name="data[EmailSetting][mail_admin]" id="EmailSettingMailAdmin_" value="0"><input type="checkbox" name="data[EmailSetting][mail_admin]" class="" value="1" id="EmailSettingMailAdmin">                                Email Admin
+                                                </label>
+                                            </div>
+                                                                                        </div>
+                                    </div>
+                                </fieldset>
+                            </div>
+                            <!-- End Text input element -->
+
+                            <!-- Begin Text input element -->
+                            <!-- <div class="col-md-6">
+                                <div class="quform-element form-group">
+                                    <div class="quform-input">
+                                        <input id="email" type="text" name="email" placeholder="Your email here" />
+                                    </div>
+                                </div>
+                            </div> -->
+                            <!-- End Text input element -->
+                            <div class="col-md-12">
+                                <fieldset style="border-bottom-width:1px;">
+                                    <legend><i class="fas fa-code"></i>E-Mail Content</legend>
+                                    <div class="form-group">
+                                        <textarea name="data[EmailSetting][content]" class="form-control" autocomplete="off" cols="30" rows="6" id="EmailSettingContent" >&lt;p&gt;{COMMENT} {REQUEST_ID_LINK}&lt;/p&gt;
+                                        </textarea>
+                                    </div>
+                                </fieldset>
+                            </div>
+
+                            
+                            
+
+                            <!-- End Captcha element -->
+
+                        </div>
+                                                    <!-- Begin Submit button -->
+                                                    <div class="col-md-12 text-right" style="padding-top:20px;">
+                                                        <div class="quform-submit-inner">
+                                                            <button class="butn" type="submit"><span>Update Template</span></button>
+                                                        </div>
+                                                        <div class="quform-loading-wrap text-left"><span class="quform-loading"></span></div>
+                                                    </div>
+                                                    <!-- End Submit button -->
+
+                    </div>
+
+
+
+                </form>

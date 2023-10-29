@@ -1,0 +1,129 @@
+      
+      <!-- Start Product Table -->
+      <div class="col-12 shop-cart-table">
+        <table class="table shop-cart text-center">
+          <colgroup>
+            <col>
+            <col class="width-1px">
+            <col class="width-120px">
+            <col class="width-1px">
+          </colgroup>
+
+          <thead>
+            <tr>
+              <th class="text-left text-uppercase font-weight-500">Product</th>
+              <th class="text-left text-uppercase font-weight-500">Price</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let basketItem of basketItems">
+              <td class="text-left">
+                <a href="#!">{{basketItem.description}}</a>
+                <span class="text-uppercase display-block">{{basketItem.productCode}}</span>
+              </td>
+              <td class="text-left">
+                {{basketItem.currency}}{{basketItem.unitPrice}}
+              </td>
+              <td class="product-remove text-center">
+                <a routerLink="" (click)="deleteItem(basketItem)"><i class="fas fa-times"></i></a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+
+
+      </div>
+      <!-- End Product Table -->
+      <!-- Start Button Set -->
+      <div class="col-12 border-bottom border-top padding-40px-tb sm-padding-20px-tb sm-margin-20px-bottom xs-margin-15px-bottom">
+        <button class="butn small xs-margin-10px-bottom" (click)="deleteAllItem()"><span><i class="fas fa-trash"></i> Empty Cart</span></button>
+        <button class="butn small float-right margin-10px-left xs-margin-10px-bottom" (click)="continueShopping()"><span>Continue Shopping</span></button>
+      </div>
+      <!-- End Button Set -->
+      <!-- Start Total Block Set -->
+      <div class="col-12 cart-total padding-40px-top sm-padding-20px-tb">
+        <div class="row">
+
+          <div class="col-lg-5 col-md-5 xs-margin-30px-bottom">
+            <div id="accordion" class="accordion-style2">
+              <div class="card">
+                <div class="card-header" id="headingOne">
+                  <h5 class="mb-0">
+                    <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                      Coupon Code
+                    </button>
+                  </h5>
+                </div>
+                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                  <div class="card-body">
+
+                    <form method="post">
+
+                      <div class="row">
+
+                        <div class="col-12">
+
+                          <div class="form-group">
+                            <input type="text" name="coupon" placeholder="Enter Your Coupon code" [(ngModel)]="promoCode" [ngClass]="{ 'is-invalid': hasPromoError == true}">
+                            <div *ngIf="hasPromoError == true" class="invalid-feedback">
+                              <div>{{promoErrorMsg}}</div>
+                            </div>
+                          </div>
+
+                        </div>
+
+                      </div>
+
+                      <button type="button" class="butn small" (click)="applyPromyPromoCode()"><span>Apply Code</span></button>
+                      &nbsp;<span *ngIf="promosuccessMsg == true"><i class="fas fa-check"></i> Promo code applied</span>&nbsp;&nbsp;<span (click)="removePromo()"  *ngIf="promosuccessMsg == true"><i class="fas fa-trash"></i></span>
+                    </form>
+
+                  </div>
+                </div>
+              </div>
+              
+            </div>
+          </div>
+
+          <div class="col-lg-6 offset-lg-1 col-md-7 offset-md-0">
+            <table class="table cart-sub-total">
+              <tbody>
+                <tr>
+                  <th class="text-right no-padding-right text-uppercase">Cart Subtotal</th>
+                  <td class="text-uppercase text-right no-padding-right">{{basketTotal.currency}}{{basketTotal.totalPriceExVAT}}</td>
+                </tr>
+                <tr>
+                  <th class="text-right no-padding-right text-uppercase">Discount Amount</th>
+                  <td class="text-uppercase text-right no-padding-right">-{{basketTotal.currency}}{{basketTotal.totalDiscountAmount}}</td>
+                </tr>
+                <tr>
+                  <th class="text-right no-padding-right text-uppercase">VAT Amount</th>
+                  <td class="text-uppercase text-right no-padding-right">{{basketTotal.currency}}{{basketTotal.totalVATAmount}}</td>
+                </tr>
+                <tr>
+                  <th class="text-right no-padding-right text-uppercase">Shipping and Handling</th>
+                  <td class="text-uppercase text-right no-padding-right">Free</td>
+                </tr>
+                <tr>
+                  <td class="no-padding-right xs-no-padding" colspan="2">
+                    <hr>
+                  </td>
+                </tr>
+                <tr class="total">
+                  <th class="text-uppercase text-right no-padding-right xs-no-padding">Order Total</th>
+                  <td class="text-uppercase text-right no-padding-right xs-no-padding">{{basketTotal.currency}}{{basketTotal.totalSales}}</td>
+                </tr>
+                <tr>
+                  <td class="no-padding-right xs-no-padding" colspan="2">
+                    <hr class="no-margin-bottom">
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <a class="butn theme medium float-right" routerLink="/checkout"><span>Proceed to Checkout</span></a>
+          </div>
+        </div>
+      </div>
+      <!-- End Total Block Set -->

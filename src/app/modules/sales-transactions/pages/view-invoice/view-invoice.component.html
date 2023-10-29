@@ -1,0 +1,139 @@
+<ng-container *ngIf="contentLoaded">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+  <div class="container bootstrap snippets bootdeys">
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="panel panel-default invoice" id="invoice">
+          <div class="panel-body">
+
+            <div class="row">
+
+              <div class="col-sm-6 top-left">
+                <img id="logo" src="../../../../../assets/img//logos/logo.png" alt="logo">
+              </div>
+
+
+
+            </div>
+            <hr>
+            <div class="row">
+
+              <div class="col-6 from">
+                <p class="lead marginbottom"><b>{{invoices.invoices[0].customerName}}</b></p>
+                <p>{{invoices.invoices[0].address1}}, {{invoices.invoices[0].address2}},</p>
+                <p>{{invoices.invoices[0].address3}}, {{invoices.invoices[0].address4}},</p>
+                <p>{{invoices.invoices[0].country}}, {{invoices.invoices[0].postCode}}</p>
+                <br />
+                <p><b>{{invoices.invoices[0].clientName}}</b></p>
+              </div>
+
+              <div class="col-6 text-right">
+                <p>RSM Softwares LTD,</p>
+                <p>85 Great Portland Street,</p>
+                <p>First Floor,</p>
+                <p>London, W1W 7LT,</p>
+                <p>United Kingdom</p>
+                <br />
+
+                <label>Invoice No : </label>
+                <!--<input id="name" type="text" formControlName="name" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.name.errors }" placeholder="Company Name here" />-->
+                <span class="marginright">{{invoices.invoices[0].invoiceNo}}</span>
+                <br />
+                <label>Invoice Date : </label>
+                <span class="marginright">{{invoices.invoices[0].invoiceDate}}</span>
+                <br />
+                <label>Due Date : </label>
+                <span class="marginright">{{invoices.invoices[0].dueDate}}</span>
+                <br />
+
+                <label>Registered No : </label>
+                <!--<input id="name" type="text" formControlName="name" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.name.errors }" placeholder="Company Name here" />-->
+                <span class="marginright">12785214</span>
+                <br />
+                <label>VAT Reg No : </label>
+                <span class="marginright">GB404 9454 96</span>
+                <br />
+                <label>Bank : </label>
+                <span class="marginright">TSB</span>
+                <br />
+                <label>Sort Code : </label>
+                <span class="marginright">77-66-68</span>
+                <br />
+                <label>Account No.: </label>
+                <span class="marginright">00016465</span>
+                <br />
+                <label>IBAN: </label>
+                <span class="marginright">GB32TSBS77666800016465</span>
+                <br />
+                <label>BIC: </label>
+                <span class="marginright">TSBSGB2AXXX</span>
+              </div>
+
+            </div>
+            <!--<div class="col-sm-6 top-right">
+
+            </div>-->
+            <div class="row table-row">
+              <table class="table table-striped">
+                <thead>
+                  <tr>
+                    <th class="text-center" style="width:14%">Product Code</th>
+                    <th style="width:30%">Description</th>
+                    <th class="text-right" style="width:14%">Unit Price</th>
+                    <th class="text-right" style="width:14%">Discount</th>
+                    <th class="text-right" style="width:14%">VAT</th>
+                    <th class="text-right" style="width:14%">Total Price</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let invoice of invoices.invoices">
+                    <td class="text-center">{{invoice.productCode}}</td>
+                    <td>{{invoice.productDescription}}</td>
+                    <td class="text-right">{{invoice.currency}} {{invoice.priceExVatString}}</td>
+                    <td class="text-right">{{invoice.currency}} {{invoice.discountAmountString}}</td>
+                    <td class="text-right">{{invoice.currency}} {{invoice.vatAmountString}}</td>
+                    <td class="text-right">{{invoice.currency}} {{invoice.totalSalesString}}</td>
+                  </tr>
+
+                </tbody>
+                <tr>
+                  <td class="text-center"></td>
+                  <td></td>
+                  <td class="text-right"> </td>
+                  <td class="text-right"> </td>
+                  <td class="text-right"> Total Ex VAT </td>
+                  <td class="text-right">{{invoices.invoices[0].currency}} {{invoices.totalExVat}}</td>
+                </tr>
+                <tr>
+                  <td class="text-center"></td>
+                  <td></td>
+                  <td class="text-right"> </td>
+                  <td class="text-right"> </td>
+                  <td class="text-right"> VAT </td>
+                  <td class="text-right">{{invoices.invoices[0].currency}} {{invoices.totalVAT}}</td>
+                </tr>
+                <tr class="border-bottom:none">
+                  <td class="text-center"></td>
+                  <td></td>
+                  <td class="text-right"> </td>
+                  <td class="text-right"> </td>
+                  <td class="text-right"> <b>Total Inc VAT</b> </td>
+                  <td class="text-right"><b>{{invoices.invoices[0].currency}} {{invoices.totalIncVat}}</b></td>
+                </tr>
+
+              </table>
+
+            </div>
+
+            <div class="row">
+              <div class="col-md-6 margintop">
+                <button class="btn btn-success" id="invoice-print" (click)="convertToPdf()"><i class="fa fa-print"></i> Print Invoice</button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-container>

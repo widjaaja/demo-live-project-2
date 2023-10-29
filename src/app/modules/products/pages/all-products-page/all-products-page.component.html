@@ -1,0 +1,44 @@
+<!-- start service section -->
+<section *ngIf="contentLoaded == true">
+  <div class="container">
+    <div class="section-heading">
+      <span>Products</span>
+      <h3>All Products</h3>
+      <!--<p class="width-55 sm-width-75 xs-width-95">Business consectetur adipisicing elit eiusmod tempor incididunt ut labore et dolore magna aliqua quis nostrud exercitation consequat.</p>-->
+    </div>
+    <div class="row mt-60">
+      <ng-container *ngFor="let item of products">
+        <div class="col-lg-4 col-md-6 margin-30px-bottom xs-margin-20px-bottom" *ngIf="item.enabled==1">
+          <div class="services-block8 padding-45px-all sm-padding-35px-tb xs-padding-30px-tb sm-no-padding-lr h-100">
+            <div class="margin-20px-bottom sm-margin-15px-bottom">
+              <i class="icon-layers font-size42 md-font-size36 sm-font-size34 text-theme-color"></i>
+            </div>
+            <h3 class="margin-20px-bottom sm-margin-15px-bottom font-size18 xs-font-size16 font-weight-600">{{item.description}}</h3>
+            <p class="sm-width-60 xs-width-85 center-col">{{item.shortDescription}}</p>
+            <ul class="list-style-16 text-center margin-30px-bottom">
+              <li [ngClass]=" {'success': item.maintenanceIncluded == 1, 'danger': item.maintenanceIncluded != 1}">
+                Database Maintenance
+              </li>
+              <li [ngClass]=" {'success': item.loggingIncluded == 1, 'danger': item.loggingIncluded != 1}">Performance Logging</li>
+              <li [ngClass]=" {'success': item.analysisIncluded == 1, 'danger': item.analysisIncluded != 1}">System Analysis</li>
+              <li [ngClass]=" {'success': item.schedulerIncluded == 1, 'danger': item.schedulerIncluded != 1}">Scheduler</li>
+
+            </ul>
+            <p *ngIf="item.unitPriceExVat != item.listPrice && item.listPrice != 0">
+              <del class="price-span">{{item.currency}} {{item.listPrice}}</del>&nbsp;
+              <span class="font-size36 price-span">{{item.currency}}{{item.unitPriceExVat}}</span>
+              <span class="per text-theme-color">&nbsp;{{item.licensePeriod}}</span>
+            </p>
+            <p *ngIf="item.unitPriceExVat == item.listPrice && item.listPrice != 0">
+              <span class="font-size36 price-span">{{item.currency}}{{item.unitPriceExVat}}</span>
+              <span class="per text-theme-color">&nbsp;{{item.licensePeriod}}</span>
+            </p>
+            <p *ngIf="item.listPrice == 0"><a routerLink="/contact-us" class="font-weight-700 text-theme-color">Contact Sales <i class="fas fa-chevron-right vertical-align-middle"></i></a></p>
+            <a routerLink="/product/{{item.productCode}}" class="font-weight-700 text-theme-color">read more <i class="fas fa-chevron-right vertical-align-middle"></i></a>
+          </div>
+        </div>
+        </ng-container>
+</div>
+  </div>
+</section>
+<!-- end service section -->

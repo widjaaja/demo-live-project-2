@@ -1,0 +1,274 @@
+        <!-- start revolution slideshow-->
+<app-slider></app-slider>
+<!-- end revolution slideshow-->
+<!-- start what we do section -->
+<app-what-we-do></app-what-we-do>
+<!-- end what we do section -->
+<!-- Featured Products section Begin -->
+<app-featured-products></app-featured-products>
+<!-- Featured Products section End -->
+<!-- start contact section -->
+<section>
+  <div class="container">
+    <div class="section-heading">
+      <span>Ready For Your Service</span>
+      <h3>Get In Touch Now</h3>
+      <p class="width-55 sm-width-75 xs-width-95">
+        We are available 24/7 by e-mail. You can also ask a question about our software and services through our contact form.
+      </p>
+    </div>
+    <div class="row">
+      <div class="col-lg-12 col-md-12 sm-margin-30px-bottom">
+        <p class="alert alert-success text-center" *ngIf="contactSubmitted == true">Submitted successfully. Our Team will contact shortly</p>
+        <!-- start form here -->
+        <form class="quform1" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+          <div class="quform-elements">
+
+            <div class="row">
+
+              <!-- Begin Text input element -->
+              <div class="col-md-6">
+                <div class="quform-element form-group">
+                  <div class="quform-input">
+                    <input id="name" type="text" formControlName="name" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.name.errors }" placeholder="Name here" />
+                    <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+                      <div *ngIf="f.name.errors.required">Name is required</div>
+                    </div>
+                  </div>
+
+
+
+                </div>
+
+              </div>
+              <!-- End Text input element -->
+              <!-- Begin Text input element -->
+              <div class="col-md-6">
+                <div class="quform-element form-group">
+                  <div class="quform-input">
+                    <input id="email" type="text" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" placeholder="Email here" />
+                    <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                      <div *ngIf="f.email.errors.required">Email is required</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- End Text input element -->
+              <!-- Begin Text input element -->
+              <div class="col-md-6">
+                <div class="quform-element form-group">
+                  <div class="quform-input">
+                    <input id="subject" type="text" formControlName="subject" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.subject.errors }" placeholder="Subject here" />
+                    <div *ngIf="submitted && f.subject.errors" class="invalid-feedback">
+                      <div *ngIf="f.subject.errors.required">Subject is required</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- End Text input element -->
+              <!-- Begin Text input element -->
+              <div class="col-md-6">
+                <div class="quform-element form-group">
+                  <div class="quform-input">
+                    <input id="phone" type="text" formControlName="phone" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.phone.errors }" placeholder="Phone Number" />
+                    <div *ngIf="submitted && f.phone.errors" class="invalid-feedback">
+                      <div *ngIf="f.phone.errors.required">Phone Number is required</div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+              <!-- End Text input element -->
+              <!-- Begin Text input element -->
+              <div class="col-md-12">
+                <div class="quform-element form-group">
+                  <div class="quform-input">
+                    <input id="company" type="text" formControlName="company" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.company.errors }" placeholder="company" />
+                    <div *ngIf="submitted && f.company.errors" class="invalid-feedback">
+                      <div *ngIf="f.company.errors.required">Company is required</div>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+
+              <!-- Begin Textarea element -->
+              <div class="col-md-12">
+                <div class="quform-element form-group">
+                  <div class="quform-input">
+
+                    <ckeditor [config]="{ toolbar: [  ] , placeholder: 'Tell us a few words', enterMode: 2}" [editor]="Editor" formControlName="message" [ngClass]="{ 'is-invalid': submitted && f.message.errors }"></ckeditor>
+                    <div *ngIf="submitted && f.message.errors" class="invalid-feedback">
+                      <div *ngIf="f.message.errors.required">Message is required</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- End Textarea element -->
+              <!-- Begin Submit button -->
+              <div class="col-md-12">
+                <div class="quform-submit-inner">
+                  <button class="butn"><span>Submit comment</span></button>
+                </div>
+                <div class="quform-loading-wrap text-left"><span class="quform-loading"></span></div>
+              </div>
+              <!-- End Submit button -->
+
+            </div>
+
+          </div>
+        </form>
+
+        <!-- end form here -->
+
+
+      </div>
+    </div>
+  </div>
+</section>
+<!-- end contact section -->
+<!-- start testmonials section -->
+<section class="lg bg-img cover-background" data-overlay-dark="8" data-background="img/bg/bg4.jpg">
+  <div class="container">
+
+    <div class="section-heading title-style7 white">
+      <h3 class="no-margin-bottom">Our Client Words</h3>
+      <span>Testimonials</span>
+    </div>
+
+    <div class="testimonial-style8 owl-theme owl-carousel" data-slider-id="1">
+      <div class="text-center">
+        <p class="font-size18 xs-font-size16 width-55 md-width-75 sm-width-85 xs-width-100 line-height-35 xs-line-height-28 center-col text-white margin-40px-bottom">
+          The SQL Mantra Tool has helped us to find the code defect in Dynamics NAV which made the Warehouse posting process to run much longer with pin point accuracy.  Thanks for the SQL Mantra Tools, the posting is much faster and we are free from locking and blocking.
+        </p>
+        <h5 class="text-white margin-5px-bottom font-size18">
+          Gaynor Brown
+        </h5>
+        <h6 class="font-size14 letter-spacing-1 font-weight-500 text-white opacity6 margin-45px-bottom">
+          IT Manager, Aldiss
+        </h6>
+      </div>
+      <div class="text-center">
+        <p class="font-size18 xs-font-size16 width-55 md-width-75 sm-width-85 xs-width-100 line-height-35 xs-line-height-28 center-col text-white margin-40px-bottom">
+          The SQL Mantra Tool has helped us in giving an unprecedented insight of the concurrent work load of our system and has highlighted many system bottlenecks, such as process, application code and index defects.  This has helped the business to increase throughput of our ERP system tremendously in responding to the increase in market demand.
+        </p>
+        <h5 class="text-white margin-5px-bottom font-size18">
+          Lee Williams
+        </h5>
+        <h6 class="font-size14 letter-spacing-1 font-weight-500 text-white opacity6 margin-45px-bottom">
+          Analyst Developer, William Medical Supplies
+        </h6>
+      </div>
+      <div class="text-center">
+        <p class="font-size18 xs-font-size16 width-55 md-width-75 sm-width-85 xs-width-100 line-height-35 xs-line-height-28 center-col text-white margin-40px-bottom">
+          Thanks to SQL Mantra Tool’s set and forget maintenance module, we managed to achieve fully automated database optimisation and maintenance.  It helped us to focus better serving our customers and our business operations rather than worrying about our systems.  As a pleasant surprise, our database size and its rate of growth also get reduced by SQL Mantra Tool’s maintenance routine.
+        </p>
+        <h5 class="text-white margin-5px-bottom font-size18">
+          Bradley Dantzic
+        </h5>
+        <h6 class="font-size14 letter-spacing-1 font-weight-500 text-white opacity6 margin-45px-bottom">
+          Director, Caribbean Blinds
+        </h6>
+      </div>
+      <div class="text-center">
+        <p class="font-size18 xs-font-size16 width-55 md-width-75 sm-width-85 xs-width-100 line-height-35 xs-line-height-28 center-col text-white margin-40px-bottom">
+          Thanks to SQL Mantra Tools our web backend database is much slimmer and faster and free from blocking and deadlocks and hence we are in a better place to handle more order volume during peak trading periods than ever before.
+        </p>
+        <h5 class="text-white margin-5px-bottom font-size18">
+          Mike Selby
+        </h5>
+        <h6 class="font-size14 letter-spacing-1 font-weight-500 text-white opacity6 margin-45px-bottom">
+          Web developer, Crocus Garden Center
+        </h6>
+      </div>
+    </div>
+
+  </div>
+</section>
+<!-- end testmonials section -->
+<!-- start blog section -->
+<!--<section class="bg-light-gray">
+    <div class="container">
+
+        <div class="section-heading"><span>Blog</span>
+            <h3>Latest Blog Posts</h3>
+            <p class="width-55 sm-width-75 xs-width-95">Business consectetur adipisicing elit eiusmod tempor incididunt ut labore et dolore magna aliqua quis nostrud exercitation consequat.</p>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-4 col-md-12 sm-margin-30px-bottom">
+                <div class="blog-grids4">
+                    <div class="blog-grid-img position-relative">
+                        <img src="../../../../../assets/img/blog/blog1.jpg" alt="" />
+                        <div class="blog-date">
+                            <span>20 / feb</span>
+                        </div>
+                    </div>
+                    <div class="blog-grid-text sm-padding-20px-tb bg-white">
+                        <h4><a href="#!">Performing at high levels</a></h4>
+                        <div class="sepratar"></div>
+                        <p class="no-margin">Exercitation ullamco laboris nisi ut aliquip ex ea commodo Exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-12 sm-margin-30px-bottom">
+                <div class="blog-grids4">
+                    <div class="blog-grid-img position-relative">
+                        <img src="../../../../../assets/img/blog/blog2.jpg" alt="" />
+                        <div class="blog-date">
+                            <span>17 / mar</span>
+                        </div>
+                    </div>
+                    <div class="blog-grid-text sm-padding-20px-tb bg-white">
+                        <h4><a href="#!">Work professional report</a></h4>
+                        <div class="sepratar"></div>
+                        <p class="no-margin">Exercitation ullamco laboris nisi ut aliquip ex ea commodo Exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-12">
+                <div class="blog-grids4">
+                    <div class="blog-grid-img position-relative">
+                        <img src="../../../../../assets/img/blog/blog3.jpg" alt="" height="400"/>
+                        <div class="blog-date">
+                            <span>27 / may</span>
+                        </div>
+                    </div>
+                    <div class="blog-grid-text sm-padding-20px-tb bg-white">
+                        <h4><a href="#!">Investment planning team</a></h4>
+                        <div class="sepratar"></div>
+                        <p class="no-margin">Exercitation ullamco laboris nisi ut aliquip ex ea commodo Exercitation ullamco laboris nisi ut aliquip ex ea commodo.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>-->
+<!-- end blog section -->
+<!-- start clients section -->
+<div class="section-clients">
+    <div class="container">
+      <div class="owl-carousel owl-theme clients" id="clients">
+        <div class="item"><a href="https://www.aldiss.com/" target="_blank"><img alt="partner-image" src="../../../../../assets/img/partners/Aldiss.png"></a></div>
+        <div class="item"><a href="https://www.cbsolarshading.co.uk/" target="_blank"><img alt="partner-image" src="../../../../../assets/img/partners/CaribbeanBlinds.png"></a></div>
+        <div class="item"><a href="https://www.idyamsolutions.com/" target="_blank"><img alt="partner-image" src="../../../../../assets/img/partners/Idyam.png"></a></div>
+        <div class="item"><a href="https://navengers.com/" target="_blank"><img alt="partner-image" src="../../../../../assets/img/partners/NAVengers.png"></a></div>
+        <div class="item"><a href="https://www.rhs.org.uk/" target="_blank"><img alt="partner-image" src="../../../../../assets/img/partners/RHS.png"></a></div>
+        <div class="item"><a href="https://www.sql-shield.com/" target="_blank"><img alt="partner-image" src="../../../../../assets/img/partners/SQL_Shield.jpg"></a></div>
+        <div class="item"><a href="https://www.trestria.co.uk/" target="_blank"><img alt="partner-image" src="../../../../../assets/img/partners/TresTria.jpg"></a></div>
+        <div class="item"><a href="https://tuskys.dpo.store/" target="_blank"><img alt="partner-image" src="../../../../../assets/img/partners/Tuskys.jpg"></a></div>
+        <div class="item"><a href="https://www.wms.co.uk/" target="_blank"><img alt="partner-image" src="../../../../../assets/img/partners/wms.jpg"></a>  </div>
+        <div class="item"><a href="https://www.crocus.co.uk/" target="_blank"><img alt="partner-image" src="../../../../../assets/img/partners/crocus.jpg"></a>  </div>
+        <div class="item"><a href="https://www.capitalhairandbeauty.co.uk/" target="_blank"><img alt="partner-image" src="../../../../../assets/img/partners/CHB.png"></a>  </div>
+        <div class="item"><a href="https://www.arbelatech.com/" target="_blank"><img alt="partner-image" src="../../../../../assets/img/partners/Arbela.png"></a>  </div>
+        <div class="item"><a href="https://www.grays-int.com/" target="_blank"><img alt="partner-image" src="../../../../../assets/img/partners/Grays-International.png"></a>  </div>
+        <div class="item"><a href="https://www.matchesfashion.com/" target="_blank"><img alt="partner-image" src="../../../../../assets/img/partners/matchesfashion.jpeg"></a>  </div>
+        <div class="item"><a href="https://www.agentprovocateur.com/" target="_blank"><img alt="partner-image" src="../../../../../assets/img/partners/AP.svg"></a>  </div>
+        <div class="item"><a href="https://www.aspinaloflondon.com/" target="_blank"><img alt="partner-image" src="../../../../../assets/img/partners/Aspinal.png"></a>  </div>
+        <div class="item"><a href="https://www.totalfitness.co.uk/" target="_blank"><img alt="partner-image" src="../../../../../assets/img/partners/TotalFitness.png"></a>  </div>
+        <div class="item"><a href="https://maruccisports.com/" target="_blank"><img alt="partner-image" src="../../../../../assets/img/partners/marucci.svg"></a>  </div>
+        <div class="item"><a href="https://www.tristarmetals.com/" target="_blank"><img alt="partner-image" src="../../../../../assets/img/partners/TriStar.svg"></a>  </div>
+      </div>
+    </div>
+</div>
+<!-- end clients section -->

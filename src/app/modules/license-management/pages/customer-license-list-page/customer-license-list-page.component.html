@@ -1,0 +1,27 @@
+
+<section>
+  <div class="container" *ngIf="contentLoaded == true">
+    <div class="row">
+      <div class="col-md-12" *ngIf="noCustomer == false">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="inner-title">
+              <a routerLink="/"><i class="fas fa-home"></i></a>&nbsp;<i class="fas fa-angle-right"></i>&nbsp;<a routerLink="" (click)="headerService.userDashboard()">Dashboard</a>&nbsp;<i class="fas fa-angle-right"></i>&nbsp;<a routerLink="/user/customers">My Customers</a>&nbsp;<i class="fas fa-angle-right"></i>&nbsp;<span>{{customer.name}}</span><br />
+              <h5>
+                Customer License
+              </h5>
+            </div>
+          </div>
+        </div>
+        <app-customer-license-list></app-customer-license-list>
+
+      </div>
+      <div class="col-md-12" *ngIf="noCustomer == true">
+        <div class="row">
+          <p>No Customer record found!</p>
+          </div>
+        </div>
+     </div>
+
+  </div>
+</section>

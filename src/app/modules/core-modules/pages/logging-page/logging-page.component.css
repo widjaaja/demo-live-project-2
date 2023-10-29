@@ -1,0 +1,10 @@
+.left-title:after {
+  content: "";
+  background: #8a2d86;
+  width: 15px;
+  height: 2px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-top: -4px;
+  margin-left: 10px;
+}

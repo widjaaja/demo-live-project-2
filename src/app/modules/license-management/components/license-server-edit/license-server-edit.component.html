@@ -1,0 +1,65 @@
+
+
+<div class="quform-elements inner-container" *ngIf="contentLoaded == true">
+
+  <div class="row">
+    <div class="col-md-12">
+
+      <form [formGroup]="LicenseServerEditForm" (ngSubmit)="onSubmit()">
+        <div class="row">
+          <div class="col-md-6">
+            <fieldset style="border-bottom:none;">
+              <legend><i class="fas fa-info-circle"></i>Basic Details</legend>
+              <div class="form-group">
+                <label>Server Name</label>
+                <input id="serverName" type="text" formControlName="serverName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.serverName.errors }" placeholder="Product Code here" />
+                <div *ngIf="submitted && f.serverName.errors" class="invalid-feedback">
+                  <div *ngIf="f.serverName.errors.required">Server name is required</div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Description</label>
+                <input id="description" type="text" formControlName="description" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.description.errors }" placeholder="Description here" />
+                <div *ngIf="submitted && f.description.errors" class="invalid-feedback">
+                  <div *ngIf="f.description.errors.required">Description is required</div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Sql Server Edition</label>
+                <input id="sqlServerEdition" type="text" formControlName="sqlServerEdition" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.sqlServerEdition.errors }" placeholder="Sql Server Edition here" />
+                <div *ngIf="submitted && f.sqlServerEdition.errors" class="invalid-feedback">
+                  <div *ngIf="f.sqlServerEdition.errors.required">Sql Server Edition is required</div>
+                </div>
+              </div>
+              
+            </fieldset>
+          </div>
+          <div class="col-md-6">
+            <fieldset>
+              <legend><i class="fas fa-info-circle"></i>Additional Details</legend>
+              
+              <div class="custom-control custom-checkbox">
+                <input type="checkbox" formControlName="active" id="active" class="custom-control-input" />
+                <label for="active" class="custom-control-label">Active</label>
+              </div>
+              
+            </fieldset>
+          </div>
+        </div>
+        
+        <div class="row">
+          <div class="col-md-9">&nbsp;</div>
+          <div class="col-md-3">
+            <button class="butn theme btn-block margin-20px-top"><span>Submit</span></button>
+
+          </div>
+        </div>
+
+
+      </form>
+
+    </div>
+
+
+  </div>
+</div>

@@ -1,0 +1,26 @@
+
+<section>
+  <div class="container" *ngIf="customerLoaded == true">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="inner-title">
+              <a routerLink="/"><i class="fas fa-home"></i></a>&nbsp;<i class="fas fa-angle-right"></i>&nbsp;<a routerLink="" (click)="headerService.userDashboard()">Dashboard</a>&nbsp;<i class="fas fa-angle-right"></i>&nbsp;<a routerLink="/user/customers">My Customers</a><i class="fas fa-angle-right"></i>&nbsp;&nbsp;<a routerLink="/user/licenses/{{customerId}}">Customer License Server</a>&nbsp;<i class="fas fa-angle-right"></i>&nbsp;<span>{{customer.name}}</span><br />
+              <h5>
+                Edit License Server
+              </h5>
+            </div>
+          </div>
+          <div class="col-md-6 text-right margin-30px-bottom padding-10px-bottom">
+            <button class="butn theme" type="button" (click)="backToLicenseList()"><span>Back to Customer Licenses</span></button>
+          </div>
+        </div>
+        <app-license-server-edit></app-license-server-edit>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+<!-- end under construction section -->

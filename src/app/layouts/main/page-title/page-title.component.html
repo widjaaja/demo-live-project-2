@@ -1,0 +1,20 @@
+<!-- start page title section -->
+<section class="page-title-section small padding-30px-tb bg-purple">
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-7 col-sm-12">
+              <h1 class="text-uppercase">{{titleService.title}}</h1>
+            </div>
+            <div class="col-md-5 col-sm-12">
+                <ul class="text-right xs-text-left">
+                    <li><a href="/">Home</a></li>
+                    <li *ngIf="titleService.action2 !=''"><a routerLink="{{titleService.action2Link}}">{{titleService.action2}}</a></li>
+                    <li *ngIf="titleService.action1 !=''">{{titleService.action1}}</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</section>
+<!-- end page title section -->

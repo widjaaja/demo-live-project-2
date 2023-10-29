@@ -1,0 +1,114 @@
+
+
+<div class="quform-elements inner-container">
+
+  <div class="row">
+    <div class="col-md-12">
+
+      <form [formGroup]="productViewForm">
+        <div class="row">
+          <div class="col-md-6">
+            <fieldset style="border-bottom:none;">
+              <legend><i class="fas fa-info-circle"></i>Basic Details</legend>
+              <div class="form-group">
+                <label>Description</label>
+                <input id="description" type="text" formControlName="description" class="form-control" placeholder="Your description here"/>
+                
+              </div>
+              <div class="form-group">
+                <label>Product Code</label>
+                <input id="productCode" type="text" formControlName="productCode" class="form-control"  placeholder="Your Product Code here"/>
+              </div>
+              <div class="form-group">
+                <label>License Period</label>
+                <input id="licensePeriod" type="text" formControlName="licensePeriod" class="form-control" placeholder="Your licensePeriod here"/>
+              </div>
+              <div class="form-group">
+                <label>Short Description</label>
+                <input id="shortDescription" type="text" formControlName="shortDescription" class="form-control" placeholder="Your shortDescription here"/>
+              </div>
+            </fieldset>
+          </div>
+          <div class="col-md-6">
+            <fieldset>
+              <legend><i class="fas fa-info-circle"></i>Pricing Details</legend>
+              <div class="form-group">
+                <label>Currency</label>
+                <input id="currency" type="text" formControlName="currency" class="form-control" placeholder="Your currency here"/>
+              </div>
+              <div class="form-group">
+                <label>List Price</label>
+                <input id="listPrice" type="text" formControlName="listPrice" class="form-control" placeholder="Your listPrice here"/>
+              </div>
+              <div class="form-group">
+                <label>Unit Price Ex VAT</label>
+                <input id="unitPriceExVAT" type="text" formControlName="unitPriceExVAT" class="form-control" placeholder="Your unitPriceExVAT here"/>
+              </div>
+
+            </fieldset>
+          </div>
+
+        </div>
+        <div class="row">
+
+
+          <div class="col-md-6">
+            <fieldset style="border-bottom-width:1px;">
+              <legend><i class="fas fa-info-circle"></i>Other Details</legend>
+              <div class="form-group">
+                <label>License Type</label>
+                <input id="licenseType" type="text" formControlName="licenseType" class="form-control" placeholder="Your licenseType here"/>
+              </div>
+              <div class="form-group">
+                <label>Server Edition</label>
+                <input id="serverEdition" type="text" formControlName="serverEdition" class="form-control" placeholder="Your serverEdition here"/>
+              </div>
+
+            </fieldset>
+
+          </div>
+          <div class="col-md-6">
+            <fieldset style="border-bottom-width:1px;">
+              <legend><i class="fas fa-info-circle"></i>Modules Included</legend>
+              <div class="custom-control custom-checkbox">
+                <input type="checkbox" formControlName="maintenanceIncluded" id="maintenanceIncluded" class="custom-control-input" />
+                <label for="maintenanceIncluded" class="custom-control-label">Database Maintenance</label>
+              </div>
+              <div class="custom-control custom-checkbox">
+                <input type="checkbox" formControlName="analysisIncluded" id="analysisIncluded" class="custom-control-input" />
+                <label for="analysisIncluded" class="custom-control-label">Analysis</label>
+              </div>
+              <div class="custom-control custom-checkbox">
+                <input type="checkbox" formControlName="loggingIncluded" id="loggingIncluded" class="custom-control-input"  />
+                <label for="loggingIncluded" class="custom-control-label">Performance Logging</label>
+              </div>
+              <div class="custom-control custom-checkbox">
+                <input type="checkbox" formControlName="schedulerIncluded" id="schedulerIncluded" class="custom-control-input" />
+                <label for="schedulerIncluded" class="custom-control-label">Schedular</label>
+              </div>
+              <div class="custom-control custom-checkbox">
+                <input type="checkbox" formControlName="featureProduct" id="featureProduct" class="custom-control-input" />
+                <label for="featureProduct" class="custom-control-label">Feature Product</label>
+              </div>
+              <div class="custom-control custom-checkbox">
+                <input type="checkbox" formControlName="evaluationOnline" id="evaluationOnline" class="custom-control-input"/>
+                <label for="payOnline" class="custom-control-label">Evaluation Online</label>
+              </div>
+              <div class="custom-control custom-checkbox">
+                <input type="checkbox" formControlName="payOnline" id="payOnline" class="custom-control-input" />
+                <label for="payOnline" class="custom-control-label">Pay Online</label>
+              </div>
+              <div class="custom-control custom-checkbox">
+                <input type="checkbox" formControlName="enabled" id="enabled" class="custom-control-input"/>
+                <label for="payOnline" class="custom-control-label">Enabled</label>
+              </div>
+            </fieldset>
+          </div>
+        </div>
+      </form>
+
+    </div>
+
+
+  </div>
+</div>

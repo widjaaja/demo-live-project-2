@@ -1,0 +1,125 @@
+
+
+<div class="quform-elements inner-container" *ngIf="contentLoaded == true">
+
+  <div class="row">
+    <div class="col-md-12">
+
+      <form [formGroup]="profileEditForm" (ngSubmit)="onSubmit()">
+        <div class="row">
+          <div class="col-md-6">
+            <fieldset style="border-bottom:none;">
+              <legend><i class="fas fa-info-circle"></i>Basic Details</legend>
+              <div class="form-group">
+                <label>Name</label>
+                <input id="contactName" type="text" formControlName="contactName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.contactName.errors }" placeholder="Name here" />
+                <div *ngIf="submitted && f.contactName.errors" class="invalid-feedback">
+                  <div *ngIf="f.contactName.errors.required">Name is required</div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label>EMail</label>
+                <input id="contactEmail" type="text" formControlName="contactEmail" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.contactEmail.errors }" placeholder="Contact Email here" ngbTooltip="Enter multiple Email by separating them by comma or semi colon"/>
+                <div *ngIf="submitted && f.contactEmail.errors" class="invalid-feedback">
+                  <div *ngIf="f.contactEmail.errors.required">Contact Email is required</div>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+          <div class="col-md-6">
+            <fieldset>
+              <legend><i class="fas fa-info-circle"></i>Contact Details</legend>
+              <div class="form-group">
+                <label>Company *</label>
+                <input id="name" type="text" formControlName="name" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.name.errors }" placeholder="Company Name here" />
+                <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+                  <div *ngIf="f.name.errors.required">Company name is required</div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Phone</label>
+                <input id="contactPhoneNo" type="text" formControlName="contactPhoneNo" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.contactPhoneNo.errors }" placeholder="Contact Phone here" />
+                <div *ngIf="submitted && f.contactPhoneNo.errors" class="invalid-feedback">
+                  <div *ngIf="f.contactPhoneNo.errors.required">Contact Phone is required and its should be morethan 10 digit</div>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+        </div>
+        <div class="row">
+
+          <div class="col-md-12">
+            <fieldset style="border-bottom-width:1px;">
+              <legend><i class="fas fa-info-circle"></i>Address Details</legend>
+              <div class="row">
+                <div class="form-group col-md-6">
+                  <label>Address 1</label>
+                  <input id="address1" type="text" formControlName="address1" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.address1.errors }" placeholder="address1 here" />
+                  <div *ngIf="submitted && f.address1.errors" class="invalid-feedback">
+                    <div *ngIf="f.address1.errors.required">address1 is required</div>
+                  </div>
+                </div>
+                <div class="form-group col-md-6">
+                  <label>Address 2</label>
+                  <input id="address2" type="text" formControlName="address2" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.address2.errors }" placeholder="address2 here" />
+                  <div *ngIf="submitted && f.address2.errors" class="invalid-feedback">
+                    <div *ngIf="f.address2.errors.required">address2 is required</div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="form-group col-md-6">
+                  <label>Address 3</label>
+                  <input id="address3" type="text" formControlName="address3" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.address3.errors }" placeholder="address3 here" />
+                  <div *ngIf="submitted && f.address3.errors" class="invalid-feedback">
+                    <div *ngIf="f.address3.errors.required">address3 is required</div>
+                  </div>
+                </div>
+                <div class="form-group col-md-6">
+                  <label>Address 4</label>
+                  <input id="address4" type="text" formControlName="address4" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.address4.errors }" placeholder="address4 here" />
+                  <div *ngIf="submitted && f.address4.errors" class="invalid-feedback">
+                    <div *ngIf="f.address4.errors.required">address4 is required</div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="form-group col-md-6">
+                  <label>Postal Code</label>
+                  <input id="postCode" type="text" formControlName="postCode" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.postCode.errors }" placeholder="Post Code here" />
+                  <div *ngIf="submitted && f.postCode.errors" class="invalid-feedback">
+                    <div *ngIf="f.postCode.errors.required">Post Code is required</div>
+                  </div>
+                </div>
+                <div class="form-group col-md-6" *ngIf="hasCountries == true">
+                  <label>Country *</label>
+                  <select formControlName="country" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.country.errors }">
+                    <option disabled>Choose Country</option>
+
+                    <option *ngFor="let obj of countries" [value]="obj.name">{{obj.code}} - {{obj.name}}</option>
+                  </select>
+                  <div *ngIf="f.country.touched && f.country.invalid" class="invalid-feedback">
+                    <div *ngIf="f.country.errors.required">Country is required.</div>
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-9">&nbsp;</div>
+          <div class="col-md-3">
+            <button class="butn theme btn-block margin-20px-top"><span>Submit</span></button>
+
+          </div>
+        </div>
+
+
+      </form>
+
+    </div>
+
+
+  </div>
+</div>

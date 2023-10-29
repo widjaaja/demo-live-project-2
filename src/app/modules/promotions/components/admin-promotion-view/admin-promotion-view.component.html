@@ -1,0 +1,73 @@
+
+
+<div class="quform-elements inner-container" *ngIf="contentLoaded == true">
+
+  <div class="row">
+    <div class="col-md-12">
+
+      <form [formGroup]="promotionViewForm">
+        <div class="row">
+          <div class="col-md-12">
+            <fieldset style="border-bottom:none;">
+              <legend><i class="fas fa-info-circle"></i>Basic Details</legend>
+              <div class="form-group">
+                <label>Code</label>
+                <input id="code" type="text" formControlName="code" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.code.errors }" placeholder="Your code here" />
+                <div *ngIf="submitted && f.code.errors" class="invalid-feedback">
+                  <div *ngIf="f.code.errors.required">code is required</div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Qualification</label>
+                <input id="qualification" type="text" formControlName="qualification" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.qualification.errors }" placeholder="Your Product Code here" />
+                <div *ngIf="submitted && f.qualification.errors" class="invalid-feedback">
+                  <div *ngIf="f.qualification.errors.required">Qualification is required</div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Qualification Threshold</label>
+                <input id="qualificationThreshold" type="text" formControlName="qualificationThreshold" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.qualificationThreshold.errors }" placeholder="Your qualificationThreshold here" />
+                <div *ngIf="submitted && f.qualificationThreshold.errors" class="invalid-feedback">
+                  <div *ngIf="f.qualificationThreshold.errors.required">Qualification Threshold is required</div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Type</label>
+                <input id="type" type="text" formControlName="type" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.type.errors }" placeholder="Your type here" />
+                <div *ngIf="submitted && f.type.errors" class="invalid-feedback">
+                  <div *ngIf="f.type.errors.required">Type is required</div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Start Date</label>
+                <input id="startDate" type="text" formControlName="startDate" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.startDate.errors }" placeholder="Your startDate here" />
+                <div *ngIf="submitted && f.startDate.errors" class="invalid-feedback">
+                  <div *ngIf="f.startDate.errors.required">Start Date is required</div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label>End Date</label>
+                <input id="endDate" type="text" formControlName="endDate" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.endDate.errors }" placeholder="Your endDate here" />
+                <div *ngIf="submitted && f.endDate.errors" class="invalid-feedback">
+                  <div *ngIf="f.endDate.errors.required">End Date is required</div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Value</label>
+                <input id="value" type="text" formControlName="value" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.value.errors }" placeholder="Your value here" />
+                <div *ngIf="submitted && f.value.errors" class="invalid-feedback">
+                  <div *ngIf="f.value.errors.required">value is required</div>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+
+        </div>
+        
+      </form>
+
+    </div>
+
+
+  </div>
+</div>

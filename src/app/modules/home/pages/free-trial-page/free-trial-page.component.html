@@ -1,0 +1,150 @@
+
+<section>
+  <div class="container" *ngIf="contentLoaded == true">
+
+    <!-- Start Product Section -->
+    <div class="row margin-90px-bottom md-margin-70px-bottom sm-margin-50px-bottom">
+      <div class="col-lg-6 sm-text-center sm-margin-30px-bottom">
+       
+          <div class="row">
+            <div class="col-md-6" *ngIf="selectedProduct.maintenanceIncluded == 1">
+              <img src="../../../../../assets/img/content/Maintanance---Big.jpg" style="height:150px;">
+
+            </div>
+            <div class="col-md-6" *ngIf="selectedProduct.schedulerIncluded == 1">
+              <img src="../../../../../assets/img/content/Scheduler---Big.jpg" style="height:150px;">
+
+            </div>
+            <div class="col-md-6" *ngIf="selectedProduct.analysisIncluded == 1">
+              <img src="../../../../../assets/img/content/Analysis---Big.jpg" style="height:150px;">
+
+            </div>
+            <div class="col-md-6" *ngIf="selectedProduct.loggingIncluded == 1">
+              <img src="../../../../../assets/img/content/Logging---Big.jpg" style="height:150px;">
+
+            </div>
+          </div>
+      </div>
+      <div class="col-lg-6 padding-40px-left sm-padding-15px-lr">
+        <div class="product-detail">
+          <h3 class="margin-8px-bottom">
+            Evaluation License Request - {{selectedProduct.description}}
+            <!--<span class="label-sale bg-theme text-white text-uppercase font-size14">Sale</span>-->
+          </h3>
+          <div class="text-right">
+            <a href="javascript:void(0);" class="margin-15px-right xs-margin-10px-bottom" (click)="open(mymodal)">How to get these details?</a>
+          </div>
+          <div class="bg-theme separator-line-horrizontal-full margin-20px-bottom"></div>
+          <form [formGroup]="freeTrialForm" (ngSubmit)="onSubmit()">
+            <div class="row">
+
+              <div class="col-sm-12 margin-5px-bottom">
+                <div class="form-group" *ngIf="hasCustomers == true">
+                  <label>Customer *</label>
+                  <select formControlName="userId" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.userId.errors }">
+                    <option disabled>Choose Customer</option>
+
+                    <option *ngFor="let obj of customers.myCustomers" [value]="obj.customerId">{{obj.name}}</option>
+                  </select>
+                  <div *ngIf="f.userId.touched && f.userId.invalid" class="invalid-feedback">
+                    <div *ngIf="f.userId.errors.required">Customer Name is required.</div>
+                  </div>
+                </div>
+                <div class="form-group" *ngIf="hasCustomers == false">
+                  <label>Customer *</label>
+                  <input type="text" class="form-control" value="{{userName}}" readonly />
+                  <input type="hidden" formControlName="userId" value="{{userId}}" />
+                </div>
+              </div>
+            </div>
+            <div class="row">
+
+              <div class="col-sm-12 margin-5px-bottom">
+                <div class="form-group">
+                  <label>Server *</label>
+                  <input id="serverName" type="text" formControlName="serverName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.serverName.errors }" placeholder="Your serverName here" />
+                  <div *ngIf="submitted && f.serverName.errors" class="invalid-feedback">
+                    <div *ngIf="f.serverName.errors.required">Server Name is required</div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+            <div class="row">
+
+              <div class="col-sm-12 margin-5px-bottom">
+                <div class="form-group">
+                  <label>Domain *</label>
+                  <input id="domainName" type="text" formControlName="domainName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.domainName.errors }" placeholder="Your domainName here" />
+                  <div *ngIf="submitted && f.domainName.errors" class="invalid-feedback">
+                    <div *ngIf="f.domainName.errors.required">Domain is required</div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+            <div class="row">
+
+              <div class="col-sm-12 margin-5px-bottom">
+                <div class="form-group">
+                  <label>Cluster</label>
+                  <input id="clusterName" type="text" formControlName="clusterName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.clusterName.errors }" placeholder="Your clusterName here" />
+                  <div *ngIf="submitted && f.clusterName.errors" class="invalid-feedback">
+                    <div *ngIf="f.clusterName.errors.required">Cluster is required</div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+            <button class="butn theme btn-block margin-20px-top"><span>Request Trial</span></button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- End Product Section -->
+    
+  </div>
+</section>
+
+<ng-template #mymodal let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Environment Detail</h4>
+    <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+      <span aria-hidden="true">×</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <p>
+      DECLARE @ClusterName VARCHAR(MAX);<br />
+
+      SET @ClusterName = '';<br />
+
+      IF ISNULL(serverproperty ('IsHadrEnabled'),0) = 1<br />
+
+      SET @ClusterName =<br />
+
+      (<br />
+
+      SELECT TOP 1 c.name<br />
+
+      FROM sys.dm_hadr_availability_replica_cluster_states s<br />
+
+      JOIN sys.availability_groups_cluster c ON s.group_id = c.group_id<br />
+
+      WHERE s.replica_server_name = @@SERVERNAME<br />
+
+      );<br />
+      <br />
+      <br />
+
+      PRINT 'Domain Name :- ' + DEFAULT_DOMAIN()<br />
+
+      PRINT 'Server Name :- ' + @@SERVERNAME<br />
+
+      PRINT 'ClusterName :- ' + @ClusterName<br />
+      <br />
+      <br />
+    </p>
+  </div>
+  </ng-template>
+

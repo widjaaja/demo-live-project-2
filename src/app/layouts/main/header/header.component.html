@@ -1,0 +1,140 @@
+<!-- start header section -->
+<header class="header-style5">
+  <div id="top-bar">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-9 col-xs-12">
+          <div class="top-bar-info">
+            <ul>
+              <li><i class="fas fa-mobile-alt"></i>+44 (0)20 3772  1081</li>
+              <li><i class="fas fa-envelope"></i>sales@sqlmantratools.com</li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-xs-12 col-md-3 xs-display-none">
+          <ul class="top-social-icon">
+            <li><a href="https://www.facebook.com/sql.mantratools.3" target="_blank"><i class="fab fa-facebook-f"></i></a></li>
+            <li><a href="https://twitter.com/ToolsSql" target="_blank"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="https://www.linkedin.com/company/68847943" target="_blank"><i class="fab fa-linkedin-in"></i></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="navbar-default">
+
+    <!-- start top search -->
+    <div class="top-search bg-theme">
+      <div class="container">
+        <form class="search-form" action="search.html" method="GET" accept-charset="utf-8">
+          <div class="input-group">
+            <span class="input-group-addon cursor-pointer">
+              <button class="search-form_submit fas fa-search font-size18 text-white" type="submit"></button>
+            </span>
+            <input type="text" class="search-form_input form-control" name="s" autocomplete="off" placeholder="Type & hit enter...">
+            <span class="input-group-addon close-search"><i class="fas fa-times font-size18 line-height-28 margin-5px-top"></i></span>
+          </div>
+        </form>
+      </div>
+    </div>
+    <!-- end top search -->
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-12 col-lg-12">
+          <div class="menu_area alt-font">
+            <nav class="navbar navbar-expand-lg navbar-light no-padding">
+
+              <div class="navbar-header navbar-header-custom">
+                <!-- start logo -->
+                <a href="/" class="navbar-brand logodefault"><img id="logo" src="../../../../assets/img/logos/logo.png" alt="logo"></a>
+                <!-- end logo -->
+              </div>
+
+              <div class="navbar-toggler"></div>
+
+              <!-- menu area -->
+              <ul class="navbar-nav ml-auto" id="nav">
+                <li>
+                  <a href="/">Home</a>
+                </li>
+                <li>
+                  <a routerLink="/products" (click)="removeHover('products')">Products</a>
+                  <ul>
+                    <ng-container *ngFor="let item of products">
+                      <li *ngIf="item.enabled==1"><a routerLink="/product/{{item.productCode}}" (click)="removeHover('product', item.productCode)">{{item.description}}</a></li>
+                    </ng-container>
+                    <li><a routerLink="/products" class="butn theme small margin-15px-top" (click)="removeHover('products')"><span>All Products</span></a></li>
+                    <li><a routerLink="/compare-products" class="butn theme small margin-15px-top" (click)="removeHover('compare-products')"><span>Compare Products</span></a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a>Modules</a>
+                  <ul>
+                    <li><a routerLink="/modules/database-maintenance" (click)="removeHover('modules/database-maintenance')">Database Maintenance</a></li>
+                    <li><a routerLink="/modules/performance-logging" (click)="removeHover('modules/performance-logging')">Performance Logging</a></li>
+                    <li><a routerLink="/modules/system-analysis" (click)="removeHover('modules/system-analysis')">System Analysis</a></li>
+                    <li><a routerLink="/modules/schedular" (click)="removeHover('modules/schedular')">Schedular</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a>Downloads</a>
+                  <ul>
+                    <li><a routerLink="" (click)="setupScreenService.downloadBrochure()">Download Brochure</a></li>
+                    <li><a routerLink="" (click)="setupScreenService.downloadSetup()">Download Tool</a></li>
+                    <li><a routerLink="" (click)="setupScreenService.donwloadManual()">Download User Manual</a></li>
+                  </ul>
+                </li>
+                <li><a routerLink="/contact-us">Contact Us</a>
+
+                <li *ngIf="userloggedin == false">
+                  <a href="#!">Account</a>
+                  <ul>
+                    <li><a routerLink="/login" (click)="removeHover('login')">Login</a></li>
+                    <li><a routerLink="/register" (click)="removeHover('register')">Register</a></li>
+                  </ul>
+                </li>
+                <li *ngIf="userloggedin == true">
+                  <a href="#!">{{userName}}</a>
+                  <ul>
+                    <li><a routerLink="" (click)="headerService.userDashboard()">Dashboard</a></li>
+                    <!--<li><a routerLink="" (click)="userUpdateProfile()">Update Profile</a></li>-->
+                    <li><a routerLink="" (click)="UserLogout()">Logout</a></li>
+                  </ul>
+                </li>
+              </ul>
+              <!-- end menu area -->
+              <!-- start attribute navigation -->
+              <div class="attr-nav sm-no-margin sm-margin-70px-right xs-margin-65px-right" *ngIf="basketLoaded==true;">
+                <ul>
+                  <li class="dropdown sm-margin-20px-right xs-margin-15px-right">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                      <i class="fas fa-shopping-cart"></i>
+                      <span class="badge bg-theme">{{basketCount}}</span>
+                    </a>
+                    <ul class="dropdown-menu cart-list" *ngIf="basketCount != 0">
+                      <li *ngFor="let basketItem of basketItems">
+                        <a routerLink="/product/{{basketItem.productCode}}" class="photo">{{basketItem.productCode}}</a>
+                        <h6><a routerLink="/product/{{basketItem.productCode}}">{{basketItem.description}}</a></h6>
+                        <p><span class="price">{{basketItem.currency}}{{basketItem.unitPrice}}</span></p>
+                      </li>
+                      <li class="total bg-theme">
+                        <span class="pull-left"><strong>Total</strong>: {{basketTotal.currency}}{{basketTotal.totalSales}}</span>
+                        <a routerLink="/cart" class="butn small btn-cart white"><span>View Cart</span></a>
+                      </li>
+                    </ul>
+                  </li>
+
+                </ul>
+              </div>
+              <!-- end attribute navigation -->
+
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</header>
+<!-- end header section -->

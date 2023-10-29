@@ -1,0 +1,167 @@
+
+
+<div class="quform-elements inner-container" *ngIf="contentLoaded == true">
+
+  <div class="row">
+    <div class="col-md-12">
+
+      <form [formGroup]="LicenseViewForm">
+        <div class="row">
+          <div class="col-md-6">
+            <fieldset style="border-bottom:none;">
+              <legend><i class="fas fa-info-circle"></i>Basic Details</legend>
+              <div class="form-group">
+                <label>Product Code</label>
+                <input id="productCode" type="text" formControlName="productCode" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.productCode.errors }" placeholder="Product Code here" />
+              </div>
+              <div class="form-group" *ngIf="canViewNotes">
+                <label>Notes</label>
+                <input id="notes" type="text" formControlName="notes" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.notes.errors }" placeholder="Notes here" />
+
+              </div>
+              <div class="form-group" *ngIf="!canViewNotes">
+                <input id="notes" type="hidden" formControlName="notes"/>
+
+              </div>
+            </fieldset>
+          </div>
+          <div class="col-md-6">
+            <fieldset>
+              <legend><i class="fas fa-info-circle"></i>Additional Details</legend>
+              <div class="form-group">
+                <label>License key</label>
+                <input id="licenseKey" type="text" formControlName="licenseKey" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.licenseKey.errors }" placeholder="License Key here" />
+                
+              </div>
+              <div class="custom-control custom-checkbox">
+                <input type="checkbox" formControlName="active" id="active" class="custom-control-input" />
+                <label for="active" class="custom-control-label">Active</label>
+              </div>
+              <div class="custom-control custom-checkbox">
+                <input type="checkbox" formControlName="autoRenew" id="autoRenew" class="custom-control-input" />
+                <label for="autoRenew" class="custom-control-label">Auto Renew</label>
+              </div>
+              <div class="custom-control custom-checkbox">
+                <input type="checkbox" formControlName="evaluation" id="evaluation" class="custom-control-input" />
+                <label for="evaluation" class="custom-control-label">Evaluation</label>
+              </div>
+            </fieldset>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <fieldset style="border-bottom:none;">
+              <legend><i class="fas fa-info-circle"></i>Maintenance Details</legend>
+              <div class="form-group">
+                <label>Maintenance Server</label>
+                <input id="maintenanceServer" type="text" formControlName="maintenanceServer" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.maintenanceServer.errors }" placeholder="Maintenance Server here" />
+                
+              </div>
+              <div class="form-group">
+                <label>Maintenance Domain</label>
+                <input id="maintenanceDomain" type="text" formControlName="maintenanceDomain" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.maintenanceDomain.errors }" placeholder="Maintenance Domain here" />
+                
+              </div>
+              <div class="form-group">
+                <label>Maintenance Expiry Date</label>
+                <div class="input-group">
+                  <input class="form-control" placeholder="yyyy-mm-dd"
+                         name="maintenanceExpiryDate" formControlName="maintenanceExpiryDate" ngbDatepicker #d="ngbDatepicker">
+                  <div class="input-group-append">
+                    <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button"><i class="fas fa-calendar"></i></button>
+                  </div>
+                </div>
+
+              </div>
+            </fieldset>
+          </div>
+          <div class="col-md-6">
+            <fieldset>
+              <legend><i class="fas fa-info-circle"></i>Logging Details</legend>
+              <div class="form-group">
+                <label>Logging Server</label>
+                <input id="loggingServer" type="text" formControlName="loggingServer" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.loggingServer.errors }" placeholder="Logging Server here" />
+                
+              </div>
+              <div class="form-group">
+                <label>Logging Domain</label>
+                <input id="loggingDomain" type="text" formControlName="loggingDomain" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.loggingDomain.errors }" placeholder="Logging Domain here" />
+                
+              </div>
+              <div class="form-group">
+                <label>Logging Expiry Date</label>
+                <div class="input-group">
+                  <input class="form-control" placeholder="yyyy-mm-dd"
+                         name="loggingExpiryDate" formControlName="loggingExpiryDate" ngbDatepicker #d="ngbDatepicker">
+                  <div class="input-group-append">
+                    <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button"><i class="fas fa-calendar"></i></button>
+                  </div>
+                </div>
+                
+              </div>
+            </fieldset>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6">
+            <fieldset style="border-bottom:none;">
+              <legend><i class="fas fa-info-circle"></i>Analysis Details</legend>
+              <div class="form-group">
+                <label>Analysis Server</label>
+                <input id="analysisServer" type="text" formControlName="analysisServer" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.analysisServer.errors }" placeholder="Analysis Server here" />
+                
+              </div>
+              <div class="form-group">
+                <label>Analysis Domain</label>
+                <input id="analysisDomain" type="text" formControlName="analysisDomain" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.analysisDomain.errors }" placeholder="Analysis Domain here" />
+                
+              </div>
+              <div class="form-group">
+                <label>Analysis Expiry Date</label>
+                <div class="input-group">
+                  <input class="form-control" placeholder="yyyy-mm-dd"
+                         name="analysisExpiryDate" formControlName="analysisExpiryDate" ngbDatepicker #d="ngbDatepicker">
+                  <div class="input-group-append">
+                    <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button"><i class="fas fa-calendar"></i></button>
+                  </div>
+                </div>
+                
+              </div>
+            </fieldset>
+          </div>
+          <div class="col-md-6">
+            <fieldset>
+              <legend><i class="fas fa-info-circle"></i>Scheduler Details</legend>
+              <div class="form-group">
+                <label>Scheduler Server</label>
+                <input id="schedulerServer" type="text" formControlName="schedulerServer" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.schedulerServer.errors }" placeholder="Scheduler Server here" />
+                
+              </div>
+              <div class="form-group">
+                <label>Scheduler Domain</label>
+                <input id="schedulerDomain" type="text" formControlName="schedulerDomain" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.schedulerDomain.errors }" placeholder="Scheduler Domain here" />
+                
+              </div>
+              <div class="form-group">
+                <label>Scheduler Expiry Date</label>
+                <div class="input-group">
+                  <input class="form-control" placeholder="yyyy-mm-dd"
+                         name="schedulerExpiryDate" formControlName="schedulerExpiryDate" ngbDatepicker #d="ngbDatepicker">
+                  <div class="input-group-append">
+                    <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button"><i class="fas fa-calendar"></i></button>
+                  </div>
+                </div>
+                
+              </div>
+            </fieldset>
+          </div>
+        </div>
+
+      </form>
+
+    </div>
+
+
+  </div>
+</div>

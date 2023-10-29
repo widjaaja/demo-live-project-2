@@ -1,0 +1,218 @@
+
+
+<div class="quform-elements inner-container">
+
+  <div class="row">
+    <div class="col-md-12">
+
+      <form [formGroup]="setupViewForm">
+        <div class="row">
+          <div class="col-md-6">
+            <fieldset style="border-bottom:none;">
+              <legend><i class="fas fa-info-circle"></i>Basic Details</legend>
+              <div class="form-group">
+                <div class="form-group">
+                  <label>Admin EMail</label>
+                  <input id="adminEMail" type="text" formControlName="adminEMail" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.adminEMail.errors }" placeholder="Your adminEMail here" />
+                  <div *ngIf="submitted && f.adminEMail.errors" class="invalid-feedback">
+                    <div *ngIf="f.adminEMail.errors.required">adminEMail is required</div>
+                  </div>
+                </div>
+                <label>VAT</label>
+                <input id="vat" type="text" formControlName="vat" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.vat.errors }" placeholder="Your vat here" />
+                <div *ngIf="submitted && f.vat.errors" class="invalid-feedback">
+                  <div *ngIf="f.vat.errors.required">vat is required</div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Renewal Discount</label>
+                <input id="renewalDiscount" type="text" formControlName="renewalDiscount" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.renewalDiscount.errors }" placeholder="Your renewalDiscount here" />
+                <div *ngIf="submitted && f.renewalDiscount.errors" class="invalid-feedback">
+                  <div *ngIf="f.renewalDiscount.errors.required">renewalDiscount is required</div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label>auto Logoff Time</label>
+                <input id="autoLogoffTime" type="text" formControlName="autoLogoffTime" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.autoLogoffTime.errors }" placeholder="Your autoLogoffTime here" />
+                <div *ngIf="submitted && f.autoLogoffTime.errors" class="invalid-feedback">
+                  <div *ngIf="f.autoLogoffTime.errors.required">autoLogoffTime is required</div>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+          <div class="col-md-6">
+            <fieldset>
+              <legend><i class="fas fa-info-circle"></i>Duration Details</legend>
+              <div class="form-group">
+                <label>Evaluation Expiry Days</label>
+                <input id="evaluationExpiryDays" type="text" formControlName="evaluationExpiryDays" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.evaluationExpiryDays.errors }" placeholder="Your Evaluation Expiry Days here" />
+                <div *ngIf="submitted && f.evaluationExpiryDays.errors" class="invalid-feedback">
+                  <div *ngIf="f.evaluationExpiryDays.errors.required">Evaluation Expiry Days is required</div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Basket Expiry Hours</label>
+                <input id="basketExpiryHours" type="text" formControlName="basketExpiryHours" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.basketExpiryHours.errors }" placeholder="Basket Expiry Hours here" />
+                <div *ngIf="submitted && f.basketExpiryHours.errors" class="invalid-feedback">
+                  <div *ngIf="f.basketExpiryHours.errors.required">Basket Expiry Hours is required</div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Auto Renew Days</label>
+                <input id="autoRenewDays" type="text" formControlName="autoRenewDays" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.autoRenewDays.errors }" placeholder="Auto Renew Days here" />
+                <div *ngIf="submitted && f.autoRenewDays.errors" class="invalid-feedback">
+                  <div *ngIf="f.autoRenewDays.errors.required">Auto Renew Days is required</div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Evaluation Period</label>
+                <input id="evaluationPeriod" type="text" formControlName="evaluationPeriod" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.evaluationPeriod.errors }" placeholder="Evaluation Period here" />
+                <div *ngIf="submitted && f.evaluationPeriod.errors" class="invalid-feedback">
+                  <div *ngIf="f.evaluationPeriod.errors.required">Evaluation Period is required</div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label>System Log Retention Days</label>
+                <input id="systemLogRetentionDays" type="text" formControlName="systemLogRetentionDays" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.systemLogRetentionDays.errors }" placeholder="System Log Retention Days here" />
+                <div *ngIf="submitted && f.systemLogRetentionDays.errors" class="invalid-feedback">
+                  <div *ngIf="f.systemLogRetentionDays.errors.required">System Log Retention Days is required</div>
+                </div>
+              </div>
+              
+
+            </fieldset>
+          </div>
+
+        </div>
+        <div class="row">
+
+
+          <div class="col-md-6">
+            <fieldset style="border-bottom:none">
+              <legend><i class="fas fa-info-circle"></i>License and Brochure Details</legend>
+              <div class="form-group">
+                <label>Invoice Prefix</label>
+                <input id="invoicePrefix" type="text" formControlName="invoicePrefix" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.invoicePrefix.errors }" placeholder="Your Invoice Prefix here" />
+                <div *ngIf="submitted && f.invoicePrefix.errors" class="invalid-feedback">
+                  <div *ngIf="f.invoicePrefix.errors.required">Invoice Prefix is required</div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label>License FileName</label>
+                <input id="licenseFileName" type="text" formControlName="licenseFileName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.licenseFileName.errors }" placeholder="Your License FileName here" />
+                <div *ngIf="submitted && f.licenseFileName.errors" class="invalid-feedback">
+                  <div *ngIf="f.licenseFileName.errors.required">License FileName is required</div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Brochure Download</label>
+                <input id="brochureDownload" type="text" formControlName="brochureDownload" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.brochureDownload.errors }" placeholder="Your Brochure Download URL here" />
+                <div *ngIf="submitted && f.brochureDownload.errors" class="invalid-feedback">
+                  <div *ngIf="f.brochureDownload.errors.required">Brochure Download URL is required</div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Product Download</label>
+                <input id="productDownload" type="text" formControlName="productDownload" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.productDownload.errors }" placeholder="Your Product Download URL here" />
+                <div *ngIf="submitted && f.productDownload.errors" class="invalid-feedback">
+                  <div *ngIf="f.productDownload.errors.required">Product Download URL is required</div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label>User Manual Download</label>
+                <input id="userManualDownload" type="text" formControlName="userManualDownload" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.userManualDownload.errors }" placeholder="Your User Manual Download url here" />
+                <div *ngIf="submitted && f.userManualDownload.errors" class="invalid-feedback">
+                  <div *ngIf="f.userManualDownload.errors.required">User Manual Download URL is required</div>
+                </div>
+              </div>
+
+            </fieldset>
+
+          </div>
+          <div class="col-md-6">
+            <fieldset style="border-bottom-width:1px;">
+              <legend><i class="fas fa-info-circle"></i>SMTP Details</legend>
+              <div class="form-group">
+                <label>SMTP Server Name</label>
+                <input id="smtpServerName" type="text" formControlName="smtpServerName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.smtpServerName.errors }" placeholder="Your SMTP Server Name here" />
+                <div *ngIf="submitted && f.smtpServerName.errors" class="invalid-feedback">
+                  <div *ngIf="f.smtpServerName.errors.required">SMTP Server Name is required</div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label>SMTP Server Port</label>
+                <input id="smtpServerPort" type="text" formControlName="smtpServerPort" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.smtpServerPort.errors }" placeholder="Your SMTP Server Port here" />
+                <div *ngIf="submitted && f.smtpServerPort.errors" class="invalid-feedback">
+                  <div *ngIf="f.smtpServerPort.errors.required">SMTP Server Port is required</div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label>SMTP UserId</label>
+                <input id="smtpUserId" type="text" formControlName="smtpUserId" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.smtpUserId.errors }" placeholder="Your SMTP UserId here" />
+                <div *ngIf="submitted && f.smtpUserId.errors" class="invalid-feedback">
+                  <div *ngIf="f.smtpUserId.errors.required">SMTP UserId is required</div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label>SMTP Password</label>
+                <input id="smtpPassword" type="text" formControlName="smtpPassword" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.smtpPassword.errors }" placeholder="Your SMTP Password here" />
+                <div *ngIf="submitted && f.smtpPassword.errors" class="invalid-feedback">
+                  <div *ngIf="f.smtpPassword.errors.required">SMTP Password is required</div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label>SMTP FromName</label>
+                <input id="smtpFromName" type="text" formControlName="smtpFromName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.smtpFromName.errors }" placeholder="Your SMTP FromName here" />
+                <div *ngIf="submitted && f.smtpFromName.errors" class="invalid-feedback">
+                  <div *ngIf="f.smtpFromName.errors.required">SMTP FromName is required</div>
+                </div>
+              </div>
+              <div class="custom-control custom-checkbox">
+                <input type="checkbox" formControlName="smtpEnableSsl" id="smtpEnableSsl" class="custom-control-input" [ngClass]="{ 'is-invalid': submitted && f.smtpEnableSsl.errors }" />
+                <label for="smtpEnableSsl" class="custom-control-label">SMTP Enable Ssl</label>
+              </div>
+            </fieldset>
+          </div>
+        </div>
+        <div class="row">
+
+
+          <div class="col-md-6">
+            <fieldset style="border-bottom-width:1px;">
+              <legend><i class="fas fa-info-circle"></i>Payment Gateway Details</legend>
+              <div class="form-group">
+                <label>Payment Gateway 1 Access Code</label>
+                <input id="pG1AccessCode" type="text" formControlName="pG1AccessCode" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.pG1AccessCode.errors }" placeholder="Your Payment Gateway 1 Access Code here" />
+                <div *ngIf="submitted && f.pG1AccessCode.errors" class="invalid-feedback">
+                  <div *ngIf="f.pG1AccessCode.errors.required">Payment Gateway 1 Access Code is required</div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label>Payment Gateway 2 Account</label>
+                <input id="pG2Account" type="text" formControlName="pG2Account" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.pG2Account.errors }" placeholder="Your Payment Gateway 2 Account here" />
+                <div *ngIf="submitted && f.pG2Account.errors" class="invalid-feedback">
+                  <div *ngIf="f.pG2Account.errors.required">Payment Gateway 2 Account is required</div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Payment Gateway 2 Password</label>
+                <input id="pG2Password" type="text" formControlName="pG2Password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.pG2Password.errors }" placeholder="Your Payment Gateway 2 Password here" />
+                <div *ngIf="submitted && f.pG2Password.errors" class="invalid-feedback">
+                  <div *ngIf="f.pG2Password.errors.required">Payment Gateway 2 Password is required</div>
+                </div>
+              </div>
+            </fieldset>
+              </div>
+          </div>
+
+      </form>
+
+    </div>
+
+
+  </div>
+</div>

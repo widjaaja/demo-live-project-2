@@ -1,0 +1,19 @@
+<!-- start page loading -->
+<!-- <div id="preloader">
+    <div class="row loader">
+        <div class="loader-icon"></div>
+    </div>
+</div> -->
+<!-- end page loading -->
+<!-- start main-wrapper section -->
+<div class="main-wrapper">
+  <app-header></app-header>
+  <app-alert></app-alert>
+
+  <router-outlet (activate)="scrollTop($event)"></router-outlet>
+  <app-footer></app-footer>
+</div>
+<!-- start scroll to top -->
+<a routerLink="" class="scroll-to-top" (click)="ScrollToTop()"><i class="fas fa-angle-up" aria-hidden="true"></i></a>
+<!-- end scroll to top -->
+
