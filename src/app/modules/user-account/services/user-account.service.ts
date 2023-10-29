@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { UserAccountApiService } from './api/user-account-api.service';
+import { UserAccountApiService } from 'src/app/modules/user-account/services/API/user-account-api.service';
 import { AuthenticateUser, JWTToken, User } from '../models/user';
 import { Router } from '@angular/router';
 import { SharedService } from '../../../shared/services/shared.service';
